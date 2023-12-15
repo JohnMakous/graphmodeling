@@ -10,6 +10,11 @@
   <body>
   <button id="click-btn"  py-click="handle_click()">Click</button>
   <div id="output"></div>
-  <py-script src="./event-handlers.py"></py-script>
+  <py-script>
+from pyscript import display
+
+def handle_click():
+    display("you clicked the button", target="output")
+  </py-script>
   </body>
 </html>
