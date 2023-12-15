@@ -1,18 +1,31 @@
 <!DOCTYPE HTML>
-<html lang="en-GB">
- <head> <title> Demonstration Table</title> </head>
+<html lang="en">
+ <head> 
+   <title>Input to Pyscript</title>
+   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css/>
+   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+ </head>
+ 
  <body>
-<table>
- <caption>37547 TEE Electric Powered Rail Car Train Functions (Abbreviated)
- <colgroup><col><col><col>
- <thead>
-  <tr> <th>Function                              <th>Control Unit     <th>Central Station
- <tbody>
-  <tr> <td>Headlights                            <td>✔                <td>✔
-  <tr> <td>Interior Lights                       <td>✔                <td>✔
-  <tr> <td>Electric locomotive operating sounds  <td>✔                <td>✔
-  <tr> <td>Engineer's cab lighting               <td>                 <td>✔
-  <tr> <td>Station Announcements - Swiss         <td>                 <td>✔
-</table>
+   <div>Type input here:</div>
+   <input type="text" id="test-input"/>
+   <button id="submit-button" type="submit" pys-onClick="my_function">OK</button>
+   <div id="test-output"></div>
+
+ <py-script>
+  from js import console
+
+  def my_function(*args, **kwargs):
+      #print('args', args)
+      #print('kwargs', kwargs)
+
+      console.log(f'args: {args}')
+      console.log(f'kwargs: {kwargs}')
+      text = Element('test-input').element.value
+
+      #print('text', text)
+      console.log(f'text: {text}')
+      Element('test-input').element.innerText = text
+ </py-script>
  </body>
 </html>
