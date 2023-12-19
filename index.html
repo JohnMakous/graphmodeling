@@ -11,18 +11,31 @@
   </head>
 
   <body>
+
+    <strong>Input Data</strong>
+
+    <input type="number" id="x1" name="x1" placeholder="x1">
+    <input type="number" id="y1" name="y1" placeholder="y1">
+    <input type="number" id="x2" name="x2" placeholder="x2">
+    <input type="number" id="y2" name="y2" placeholder="y2">
+
+    <br>
+
     <strong>Graph of Data:</strong>
+
     <div id = "plot"> </div>
-   <py-script output = "plot">        
+
+   <py-script output = "plot">  
+
 import numpy as np   
 import matplotlib.pyplot as plt
 
 a = []
 b=[]
-for i in range(0,6):
-        x=input("input x"+str(i))
-        a.append(x)
-        b.append(i)
+a.append(x1.value)
+b.append(y1.value)
+a.append(x2.value)
+b.append(y2.value)
 a = np.array(a)
 b = np.array(b)
 afloat = [float(i) for i in a]
@@ -34,7 +47,7 @@ y_model = 2*x_model*x_model
 
 fig1,ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
 fig1, ax1 = plt.subplots()
-ax1.scatter(bfloat,afloat)
+ax1.scatter(afloat,bfloat)
 ax1.set_title("Graph of Data",fontsize=11)
 ax1.set_xlabel("x variable",fontsize=10)
 ax1.set_ylabel("y variable",fontsize=10)
