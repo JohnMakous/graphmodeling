@@ -32,10 +32,15 @@ import matplotlib.pyplot as plt
 
 a = []
 b=[]
-a.append(x1.value)
-b.append(y1.value)
-a.append(x2.value)
-b.append(y2.value)
+xdata1 = Element("x1")
+ydata1 = Element("y1")
+xdata2 = Element("x2")
+ydata2 = Element("y2")
+
+a.append(xdata1.value)
+b.append(ydata1.value)
+a.append(xdata2.value)
+b.append(ydata2.value)
 a = np.array(a)
 b = np.array(b)
 afloat = [float(i) for i in a]
