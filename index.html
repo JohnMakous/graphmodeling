@@ -14,10 +14,10 @@
 
     <strong>Input Data</strong>
 
-    <input type="number" id="x1" name="x1" placeholder="x1">
-    <input type="number" id="y1" name="y1" placeholder="y1">
-    <input type="number" id="x2" name="x2" placeholder="x2">
-    <input type="number" id="y2" name="y2" placeholder="y2">
+    <input type="text" class="form-control" id="x1" name="x1" placeholder="x1">
+    <input type="text" class="form-control" id="y1" name="y1" placeholder="y1">
+    <input type="text" class="form-control" id="x2" name="x2" placeholder="x2">
+    <input type="text" class="form-control" id="y2" name="y2" placeholder="y2">
 
     <br>
 
@@ -31,11 +31,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 a = []
-b=[]
-xdata1 = float("x1")
-ydata1 = float("y1")
-xdata2 = float("x2")
-ydata2 = float("y2")
+b = []
+xdata1 = Element('x1').value
+ydata1 = Element('y1').value
+xdata2 = Element('x2').value
+ydata2 = Element('y2').value
 
 a.append(xdata1)
 b.append(ydata1)
