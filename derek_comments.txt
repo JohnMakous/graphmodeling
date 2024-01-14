@@ -1,0 +1,3 @@
+hello JohnMakous.
+
+  I found this about accessing html element values: https://stackoverflow.com/questions/23451493/how-do-you-take-input-from-a-html-textbox-and-assign-it-to-a-javascript-variable
