@@ -140,6 +140,40 @@ fig1
 from js import console
 
 def my_function(*args, **kwargs):
+	    <strong>Graph of Data:</strong>
+    <div id = "plot"> </div>
+   <py-script output = "plot">        
+import numpy as np   
+import matplotlib.pyplot as plt
+
+a = []
+b=[]
+for i in range(0,4):
+        x=input("input x"+str(i))
+        a.append(x)
+        b.append(i)
+a = np.array(a)
+b = np.array(b)
+afloat = [float(i) for i in a]
+bfloat = [float(i) for i in b]
+
+# Generate model function
+x_model = np.arange(0.0,50.0,.01)
+y_model = 2*x_model*x_model
+
+fig1,ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
+fig1, ax1 = plt.subplots()
+ax1.scatter(bfloat,afloat)
+ax1.set_title("Graph of Data",fontsize=11)
+ax1.set_xlabel("x variable",fontsize=10)
+ax1.set_ylabel("y variable",fontsize=10)
+plt.plot(x_model, y_model)
+ax1.set_xlim(0,6)
+ax1.set_ylim(0,50)
+ax1.margins(y=0)
+ax1.grid()
+        
+fig1
 
     text = Element('test-input').element.value + "abc"
     print('text', text)
