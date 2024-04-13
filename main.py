@@ -20,10 +20,6 @@ def update_graph(event):
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
 
-	c1float=1
-	x_model = np.arange(0.0,50.0,.01)
-	y_model = c1float*x_model*x_model
-
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
 	fig1, ax1 = plt.subplots()
 	ax1.scatter(xfloat,yfloat)
@@ -70,6 +66,7 @@ def update_model(event):
 	ax1.set_xlabel("x variable",fontsize=10)
 	ax1.set_ylabel("y variable",fontsize=10)
 	plt.plot(x_model, y_model)
+	ax1.set_xlim(0, 20)
 	ax1.set_ylim(0,50)
 	ax1.margins(y=0)
 	ax1.grid()
