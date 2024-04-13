@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pyweb import pydom
 from pyscript import display
+c1=1
 def update_graph(event):
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
@@ -12,6 +13,9 @@ def update_graph(event):
 	y2 = pydom["input#y2"][0].value
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
+
+	c1 = pydom["input#c1"][0].value
+	c1float=float(c1)
 	
 	x = np.array([x1,x2,x3,x4])
 	y = np.array([y1,y2,y3,y4])
@@ -20,7 +24,7 @@ def update_graph(event):
 	yfloat = [float(i) for i in y]
 	
 	x_model = np.arange(0.0,50.0,.01)
-	y_model = 2*x_model*x_model
+	y_model = c1float*x_model*x_model
 
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
 	fig1, ax1 = plt.subplots()
@@ -33,4 +37,6 @@ def update_graph(event):
 	ax1.set_ylim(0,50)
 	ax1.margins(y=0)
 	ax1.grid()
+
+	
 	display(fig1, target='graph', append=False)
