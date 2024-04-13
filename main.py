@@ -33,10 +33,29 @@ def update_graph(event):
 	ax1.set_xlabel("x variable",fontsize=10)
 	ax1.set_ylabel("y variable",fontsize=10)
 	plt.plot(x_model, y_model)
-	
 	ax1.set_ylim(0,50)
 	ax1.margins(y=0)
 	ax1.grid()
-
 	
 	display(fig1, target='graph', append=False)
+
+def update_model(event):
+	c1 = pydom["input#c1"][0].value
+	c1float=float(c1)
+		
+	x_model = np.arange(0.0,50.0,.01)
+	y_model = c1float*x_model*x_model
+
+	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
+	fig1, ax1 = plt.subplots()
+	ax1.scatter(xfloat,yfloat)
+	ax1.set_title("Graph of Data",fontsize=11)
+	ax1.set_xlabel("x variable",fontsize=10)
+	ax1.set_ylabel("y variable",fontsize=10)
+	plt.plot(x_model, y_model)
+	ax1.set_ylim(0,50)
+	ax1.margins(y=0)
+	ax1.grid()
+	
+	display(fig1, target='graph', append=False)
+
