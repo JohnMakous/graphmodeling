@@ -3,12 +3,17 @@ import numpy as np
 from pyweb import pydom
 from pyscript import display
 def update_graph(event):
+	x1 = pydom["input#x1"][0].value
+	x2 = pydom["input#x2"][0].value
+	x3 = pydom["input#x3"][0].value
+	x4 = pydom["input#x4"][0].value
+
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
 	
-	x = np.array([1,2,3,4])
+	x = np.array([x1,x2,x3,x4])
 	y = np.array([y1,y2,y3,y4])
 	
 	xfloat = [float(i) for i in x]
