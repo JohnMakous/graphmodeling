@@ -29,7 +29,7 @@ def update_graph(event):
 	ax1.set_xlabel("x variable",fontsize=10)
 	ax1.set_ylabel("y variable",fontsize=10)
 	plt.plot(x_model, y_model)
-	ax1.set_xlim(0,6)
+	# ax1.set_xlim(0,6)
 	ax1.set_ylim(0,50)
 	ax1.margins(y=0)
 	ax1.grid()
