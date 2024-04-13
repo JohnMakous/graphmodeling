@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pyweb import pydom
 from pyscript import display
-c1=1
+
 def update_graph(event):
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
@@ -19,7 +19,8 @@ def update_graph(event):
 	
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
-	
+
+	c1float=1
 	x_model = np.arange(0.0,50.0,.01)
 	y_model = c1float*x_model*x_model
 
