@@ -26,8 +26,8 @@ def update_graph(event):
 	ax1.set_title("Graph of Data",fontsize=11)
 	ax1.set_xlabel("x variable",fontsize=10)
 	ax1.set_ylabel("y variable",fontsize=10)
-	
-	ax1.set_ylim(0,50)
+	ax1.set_xlim(0, 20)
+	ax1.set_ylim(0,30)
 	ax1.margins(y=0)
 	ax1.grid()
 	
@@ -52,11 +52,8 @@ def update_model(event):
 	
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
-	
-	c1 = pydom["input#c1"][0].value
-	c1float=float(c1)
 		
-	x_model = np.arange(0.0,50.0,.01)
+	x_model = np.arange(0.0,20.0,.01)
 	y_model = c1float*x_model*x_model
 
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
@@ -67,7 +64,7 @@ def update_model(event):
 	ax1.set_ylabel("y variable",fontsize=10)
 	plt.plot(x_model, y_model)
 	ax1.set_xlim(0, 20)
-	ax1.set_ylim(0,50)
+	ax1.set_ylim(0,30)
 	ax1.margins(y=0)
 	ax1.grid()
 	
