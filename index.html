@@ -1,185 +1,56 @@
-<!--
-<html>
-  <head>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-
-    <py-env>
-      - numpy
-      - matplotlib	
-    </py-env>
-    
-  </head>
-
-  <body>
-    <strong>Graph of Data:</strong>
-    <div id = "plot"> </div>
-   <py-script output = "plot">        
-import numpy as np   
-import matplotlib.pyplot as plt
-
-a = []
-b=[]
-for i in range(0,4):
-        x=input("input x"+str(i))
-        a.append(x)
-        b.append(i)
-a = np.array(a)
-b = np.array(b)
-afloat = [float(i) for i in a]
-bfloat = [float(i) for i in b]
-
-# Generate model function
-x_model = np.arange(0.0,50.0,.01)
-y_model = 2*x_model*x_model
-
-fig1,ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
-fig1, ax1 = plt.subplots()
-ax1.scatter(bfloat,afloat)
-ax1.set_title("Graph of Data",fontsize=11)
-ax1.set_xlabel("x variable",fontsize=10)
-ax1.set_ylabel("y variable",fontsize=10)
-plt.plot(x_model, y_model)
-ax1.set_xlim(0,6)
-ax1.set_ylim(0,50)
-ax1.margins(y=0)
-ax1.grid()
-        
-fig1
-</py-script> 
-  
-  </body>
-</html>
-
-
-<html>
-  <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <title>🦜 Polyglot - Piratical PyScript</title>
-      <script type="module" src="https://pyscript.net/releases/2023.12.1/core.js"></script>
-  </head>
-  <body>
- <h1>Test Numpy</h1>
-  <p>Try using Numpy librar</p>
-  <input type="float" name="x" id="x" placeholder="type x value here" />
-  <button py-click="rootx">Enter</button>
-  <div id="output"></div>
-    
-  <script type="py" src="./main.py" config="./pyscript.json"></script>
-    
-    <py-script output = "plot">
-      python code
-
-      
-    </py-script>py-script>
-  </body>
-</html>
--->
-
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.2.1/core.js"></script>
     <title>Input to Pyscript</title>
-
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-     
 	<py-env>
       - matplotlib
 	</py-env>
-      
   </head>
-
-<body style="margin: 25px 75px 25px 75px;">
-    
+  <body style="margin: 25px 75px 25px 75px;">
     <strong>Graph of Data:</strong>
-    <div id = "plot"> </div>
-   <py-script output = "plot">        
-import numpy as np   
+    <div>Type input here:</div>
+    <input type="text" id="y1" value="1"/>
+    <input type="text" id="y2" value="2"/>
+    <input type="text" id="y3" value="3"/>
+    <input type="text" id="y4" value="4"/>
+    <button id="submit-button" type="submit" pys-onClick="update_graph">OK</button>
+		<div id="graph"/>
+    <py-script output = "graph">
+import numpy as np
 import matplotlib.pyplot as plt
+import io
+import base64
 
-a = []
-b=[]
-for i in range(0,4):
-        x=input("input x"+str(i))
-        a.append(x)
-        b.append(i)
-a = np.array(a)
-b = np.array(b)
-afloat = [float(i) for i in a]
-bfloat = [float(i) for i in b]
+def update_graph(*args, **kwargs):
+	y1 = Element('y1').element.value
+	y2 = Element('y2').element.value
+	y3 = Element('y3').element.value
+	y4 = Element('y4').element.value
 
-# Generate model function
-x_model = np.arange(0.0,50.0,.01)
-y_model = 2*x_model*x_model
-
-fig1,ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
-fig1, ax1 = plt.subplots()
-ax1.scatter(bfloat,afloat)
-ax1.set_title("Graph of Data",fontsize=11)
-ax1.set_xlabel("x variable",fontsize=10)
-ax1.set_ylabel("y variable",fontsize=10)
-plt.plot(x_model, y_model)
-ax1.set_xlim(0,6)
-ax1.set_ylim(0,50)
-ax1.margins(y=0)
-ax1.grid()
-        
-fig1
-</py-script>  
-    <div>Type input here:</div>     
-    <input type="text" id="test-input"/>
-    <button id="submit-button" type="submit" pys-onClick="my_function">OK</button>
-    <div id="testoutput"></div>
-
-<py-script output = "testoutput">
-    
-from js import console
-
-def my_function(*args, **kwargs):
-	    <strong>Graph of Data:</strong>
-    <div id = "plot"> </div>
-   <py-script output = "plot">        
-import numpy as np   
-import matplotlib.pyplot as plt
-
-a = []
-b=[]
-for i in range(0,4):
-        x=input("input x"+str(i))
-        a.append(x)
-        b.append(i)
-a = np.array(a)
-b = np.array(b)
-afloat = [float(i) for i in a]
-bfloat = [float(i) for i in b]
-
-# Generate model function
-x_model = np.arange(0.0,50.0,.01)
-y_model = 2*x_model*x_model
-
-fig1,ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
-fig1, ax1 = plt.subplots()
-ax1.scatter(bfloat,afloat)
-ax1.set_title("Graph of Data",fontsize=11)
-ax1.set_xlabel("x variable",fontsize=10)
-ax1.set_ylabel("y variable",fontsize=10)
-plt.plot(x_model, y_model)
-ax1.set_xlim(0,6)
-ax1.set_ylim(0,50)
-ax1.margins(y=0)
-ax1.grid()
-        
-fig1
-
-    text = Element('test-input').element.value + "abc"
-    print('text', text)
-	
-    console.log(f'text: {text}')
-    Element('testoutput').element.innerText = text
-</py-script>
-</body>
-</html>
+	x = [1,2,3,4]
+	y = [y1,y2,y3,y4]
+	x = np.array(x)
+	y = np.array(y)
+	xfloat = [float(i) for i in x]
+	yfloat = [float(i) for i in y]
+	x_model = np.arange(0.0,50.0,.01)
+	y_model = 2*x_model*x_model
+	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
+	fig1, ax1 = plt.subplots()
+	ax1.scatter(yfloat,xfloat)
+	ax1.set_title("Graph of Data",fontsize=11)
+	ax1.set_xlabel("x variable",fontsize=10)
+	ax1.set_ylabel("y variable",fontsize=10)
+	plt.plot(x_model, y_model)
+	ax1.set_xlim(0,6)
+	ax1.set_ylim(0,50)
+	ax1.margins(y=0)
+	ax1.grid()
+	display(fig1, target='graph', append=False)
+		</py-script>
+  </body>
+</html>-->
