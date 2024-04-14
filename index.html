@@ -13,10 +13,14 @@
         <title>Graphmodeling</title>
     </head>
 <style>
-.data-table {
-	display: inline-block
-	background-color: blue
-	}
+	.data-table {
+		display: inline-block
+		background-color: blue
+		}
+	
+	.graph {
+		display: inline-block
+		}
 </style>
     <body>
 	<strong>Graph of Data:</strong>
@@ -79,12 +83,15 @@
     <td><input type="text" id="y4"/></td>
   </tr>
 </table>
-</div>
-	<button id="submit-button" type="submit" py-click="update_graph">OK</button>
-	<div id="graph"></div>
-        <section class="pyscript">
-            <script type="py" src="./main.py" config="./pyscript.toml"></script>
-        </section>
+</div>    
+	
+<button id="submit-button" type="submit" py-click="update_graph">OK</button>
+	    
+<div class="graph" id="graph"></div>
+	    
+<section class="pyscript">
+	<script type="py" src="./main.py" config="./pyscript.toml"></script>
+</section>
 
 	<div>Type coefficient here:</div>
 	<input type="c1" id="c1"/>
