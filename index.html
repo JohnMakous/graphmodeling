@@ -31,14 +31,13 @@
 	.models-list {
 		display: inline-block;
 		width: 120px;
-		background-color: rgb(240, 248, 255);
 		border-style: solid;
-		border-color: black;
+		border-color: blue;
 		}
 	
 	.graph {
 		display: inline-block;
-		width: 700px;
+		width: 600px;
 		background-color: red;
 		border-style: solid;
 		border-color: black;
@@ -49,58 +48,62 @@
 	    
 <div class="data-table">
 	<div class="data-column">
-	<div><center><p>x-data</center></p></div>
-	<table border=1>
-	  <tr>
-	    <td><label for="x1">x1</label></td>
-	    <td><input type="text" id="x1" size=10/></td>
-	  </tr>
-	  <tr>
-	    <td><label for="x2">x2</label></td>
-	    <td><input type="text" id="x2" size=10/></td>
-	  </tr>
-	  <tr>
-	    <td><label for="x3">x3</label></td>
-	    <td><input type="text" id="x3" size=10/></td>
-	  </tr>
-	  <tr>
-	    <td><label for="x4">x4</label></td>
-	    <td><input type="text" id="x4" size=10/></td>
-	  </tr>
-	</table>
-</div>
+		<div><center><p>x-data</center></p></div>
+		<table border=1>
+		  <tr>
+		    <td><label for="x1">x1</label></td>
+		    <td><input type="text" id="x1" size=10/></td>
+		  </tr>
+		  <tr>
+		    <td><label for="x2">x2</label></td>
+		    <td><input type="text" id="x2" size=10/></td>
+		  </tr>
+		  <tr>
+		    <td><label for="x3">x3</label></td>
+		    <td><input type="text" id="x3" size=10/></td>
+		  </tr>
+		  <tr>
+		    <td><label for="x4">x4</label></td>
+		    <td><input type="text" id="x4" size=10/></td>
+		  </tr>
+		</table>
+	</div>
 
 	<div class="data-column">
-	<div><center><p>y-data</center></div>
-	<table border=1>
-	  <tr>
-	    <td><label for="y1">y1</label></td>
-	    <td><input type="text" id="y1" size=10/></td>
-	  </tr>
-	  <tr>
-	    <td><label for="y2">y2</label></td>
-	    <td><input type="text" id="y2" size=10/></td>
-	  </tr>
-	  <tr>
-	    <td><label for="y3">y3</label></td>
-	    <td><input type="text" id="y3" size=10/></td>
-	  </tr>
-	  <tr>
-	    <td><label for="y4">y4</label></td>
-	    <td><input type="text" id="y4" size=10/></td>
-	  </tr>
-	</table>
+		<div><center><p>y-data</center></div>
+		<table border=1>
+		  <tr>
+		    <td><label for="y1">y1</label></td>
+		    <td><input type="text" id="y1" size=10/></td>
+		  </tr>
+		  <tr>
+		    <td><label for="y2">y2</label></td>
+		    <td><input type="text" id="y2" size=10/></td>
+		  </tr>
+		  <tr>
+		    <td><label for="y3">y3</label></td>
+		    <td><input type="text" id="y3" size=10/></td>
+		  </tr>
+		  <tr>
+		    <td><label for="y4">y4</label></td>
+		    <td><input type="text" id="y4" size=10/></td>
+		  </tr>
+		</table>
+		br
 	</div>
+
 	<div><button id="submit-button" type="submit" py-click="update_graph">OK</button></div>
 </div>
+	
 <div class="models-list>
-	<div><center>Models to Fit to the Data</center>
-	<br>
+	<div>
+		<center>Models to Fit to the Data</center>
+		<br>
 	</div>
 	<div><center><p>Parabola</center>
 	<table border=1>
 	  <tr>
-	    <td><label for="parabola">parabola: y = c1*x^2</label></td>
+	    <td><label for="c1">parabola: y = c1*x^2</label></td>
 	    <td><input type="c1" id="c1" size=10/></td>
 	  </tr>
 	</table>
