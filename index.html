@@ -15,7 +15,7 @@
 <style>
 	.data-column {
 		display: inline-block;
-		width: 100px;
+		width: 150px;
 		background-color: blue;
 		border-style: solid;
 		border-color: black;
@@ -30,7 +30,7 @@
 	
 	.graph {
 		display: inline-block;
-		width: 400px;
+		width: 600px;
 		background-color: red;
 		border-style: solid;
 		border-color: black;
@@ -41,7 +41,7 @@
 	    
 <div class="data-table">
 	<div class="data-column">
-	<table>
+	<table border=1 width=140>
 	  <tr>
 	    <td>x-data</label></td>
 	  </tr>
@@ -77,7 +77,7 @@
 	<input type="text" id="y4"/>   -->
 
 	<div class="data-column">
-	<table>
+	<table border=1 width=140>
 	  <tr>
 	    <td>y-data</label></td>
 	  </tr>
@@ -99,7 +99,7 @@
 	  </tr>
 	</table>
 	</div>
-	<button id="submit-button" type="submit" py-click="update_graph">OK</button>
+	<div><button id="submit-button" type="submit" py-click="update_graph">OK</button></div>
 </div>
 	
 <div class="graph" id="graph"></div>
