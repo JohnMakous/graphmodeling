@@ -13,42 +13,48 @@
         <title>Graphmodeling</title>
     </head>
 <style>
+	.data-column {
+		display: inline-block;
+		width: 100px;
+		background-color: light-blue;
+		}
 	.data-table {
 		display: inline-block;
 		width: 200px;
-		background-color: blue;
 		}
 	
 	.graph {
 		display: inline-block;
 		width: 400px;
+		background-color: gray;
 		}
 </style>
     <body>
 	<strong>Graph of Data:</strong>
-	
+	    
 <div class="data-table">
-<table>
-  <tr>
-    <td>x-data</label></td>
-  </tr>
-  <tr>
-    <td><label for="x1">x1</label></td>
-    <td><input type="text" id="x1"/></td>
-  </tr>
-  <tr>
-    <td><label for="x2">x2</label></td>
-    <td><input type="text" id="x2"/></td>
-  </tr>
-  <tr>
-    <td><label for="x3">x3</label></td>
-    <td><input type="text" id="x3"/></td>
-  </tr>
-  <tr>
-    <td><label for="x4">x4</label></td>
-    <td><input type="text" id="x4"/></td>
-  </tr>
-</table>
+	<div class="data-column">
+	<table>
+	  <tr>
+	    <td>x-data</label></td>
+	  </tr>
+	  <tr>
+	    <td><label for="x1">x1</label></td>
+	    <td><input type="text" id="x1"/></td>
+	  </tr>
+	  <tr>
+	    <td><label for="x2">x2</label></td>
+	    <td><input type="text" id="x2"/></td>
+	  </tr>
+	  <tr>
+	    <td><label for="x3">x3</label></td>
+	    <td><input type="text" id="x3"/></td>
+	  </tr>
+	  <tr>
+	    <td><label for="x4">x4</label></td>
+	    <td><input type="text" id="x4"/></td>
+	  </tr>
+	</table>
 </div>
 	    
 	 <!-- <input type="text" id="x1"/>
@@ -63,29 +69,30 @@
 	<input type="text" id="y3"/>
 	<input type="text" id="y4"/>   -->
 
-<div class="data-table">
-<table>
-  <tr>
-    <td>y-data</label></td>
-  </tr>
-  <tr>
-    <td><label for="y1">y1</label></td>
-    <td><input type="text" id="y1"/></td>
-  </tr>
-  <tr>
-    <td><label for="y2">y2</label></td>
-    <td><input type="text" id="y2"/></td>
-  </tr>
-  <tr>
-    <td><label for="y3">y3</label></td>
-    <td><input type="text" id="y3"/></td>
-  </tr>
-  <tr>
-    <td><label for="y4">y4</label></td>
-    <td><input type="text" id="y4"/></td>
-  </tr>
-</table>
-</div>    
+	<div class="data-column">
+	<table>
+	  <tr>
+	    <td>y-data</label></td>
+	  </tr>
+	  <tr>
+	    <td><label for="y1">y1</label></td>
+	    <td><input type="text" id="y1"/></td>
+	  </tr>
+	  <tr>
+	    <td><label for="y2">y2</label></td>
+	    <td><input type="text" id="y2"/></td>
+	  </tr>
+	  <tr>
+	    <td><label for="y3">y3</label></td>
+	    <td><input type="text" id="y3"/></td>
+	  </tr>
+	  <tr>
+	    <td><label for="y4">y4</label></td>
+	    <td><input type="text" id="y4"/></td>
+	  </tr>
+	</table>
+	</div>
+</div>
 	
 <button id="submit-button" type="submit" py-click="update_graph">OK</button>
 	    
