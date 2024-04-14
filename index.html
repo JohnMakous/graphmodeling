@@ -84,6 +84,11 @@
 	</table>
 	</div>
 	<div><button id="submit-button" type="submit" py-click="update_graph">OK</button></div>
+	<div>
+		<div>Type coefficient here:</div>
+	<div><input type="c1" id="c1" label="c1"/>
+	<button id="submit-button" type="submit" py-click="update_model">OK</button></div>
+	</div>
 </div>
 	
 <div class="graph" id="graph"></div>
@@ -92,9 +97,7 @@
 	<script type="py" src="./main.py" config="./pyscript.toml"></script>
 </section>
 
-	<div>Type coefficient here:</div>
-	<input type="c1" id="c1"/>
-	<button id="submit-button" type="submit" py-click="update_model">OK</button>
+	
 	    
     </body>
 </html>
