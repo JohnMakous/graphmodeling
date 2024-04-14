@@ -84,15 +84,18 @@
 	</table>
 	</div>
 	<div><button id="submit-button" type="submit" py-click="update_graph">OK</button></div>
-	
-	<div>
-		<div><center>Models to Fit to the Data</center>
-		<br>
-		</div>
-		<div><p>"parabola: y = c1*x^2</p><br>
-			<input type="c1" id="c1"/>
-	<button id="submit-button" type="submit" py-click="update_model">OK</button></div>
+</div>
+<div class="models-list>
+	<div><center>Models to Fit to the Data</center>
+	<br>
 	</div>
+	<div><center><p>Parabola</center>
+	<table border=1>
+	  <tr>
+	    <td><label for="parabola">parabola: y = c1*x^2</label></td>
+	    <td><input type="c1" id="c1" size=10/></td>
+	  </tr>
+	<button id="submit-button" type="submit" py-click="update_model">OK</button></div>
 </div>
 	
 <div class="graph" id="graph"></div>
