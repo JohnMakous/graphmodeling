@@ -99,46 +99,36 @@
 	<div>
 		<center>Models to Fit Data</center>
 	</div>
-		<!-- <div>
-			<center><p>Linear: y = c1*x</center> + c0
-		</div>   -->
-		<div>
-			<table border=1>
-			  <tr>
-			    <td  colspan="2">Linear: y = c1*x</center> + c0</td>
-			  </tr>
-			  <tr>
-			    <td><label for="c0">c0</label></td>
-			    <td><input type="c0" id="c0" size=8/></td>
-			  </tr>
-			  <tr> 
-			    <td><label for="c1">c1</label></td>
-			    <td><input type="c1" id="c1" size=8/></td>
-			  </tr>
-			</table>
-		</div>
+		
+	<div>
+		<table border=1>
+		  <tr>
+		    <td  colspan="2">Linear: y = c1*x + c0</td>
+		  </tr>
+		  <tr>
+		    <td><label for="c0">c0</label></td>
+		    <td><input type="c0" id="c0" size=8/></td>
+		  </tr>
+		  <tr> 
+		    <td><label for="c1">c1</label></td>
+		    <td><input type="c1" id="c1" size=8/></td>
+		  </tr>
+		</table>
 		<button id="submit-button" type="submit" py-click="linear_model">OK</button>
 	</div>
-
-	</div>
-		<div>
-			<center><p>Parabola: y = c1*x^2</center>
-		</div>
-		<div>
-			<table border=1>
-			  <tr>
-			    <td  colspan="2">Parabola: y = c1*x^2</td>
-			  </tr>
-			  <tr>
-			    <td><label for="c1">c1</label></td>
-			    <td><input type="c1" id="c1" size=8/></td>
-			  </tr>
-			</table>
-		</div>
+	
+	<div>
+		<table border=1>
+		  <tr>
+		    <td  colspan="2">Parabola: y = c1*x^2</td>
+		  </tr>
+		  <tr>
+		    <td><label for="c1">c1</label></td>
+		    <td><input type="c1" id="c1" size=8/></td>
+		  </tr>
+		</table>
 		<button id="submit-button" type="submit" py-click="parabola_model">OK</button>
 	</div>
-
-	
 </div>
 	
 <div class="graph" id="graph"></div>
