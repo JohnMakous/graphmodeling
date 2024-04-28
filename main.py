@@ -83,7 +83,7 @@ def parabola_model(event):
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
 
-	c1 = pydom["input#par_c1"][0].value
+	c1 = pydom["input#pc1"][0].value
 	c1float=float(c1)
 	
 	x = np.array([x1,x2,x3,x4])
