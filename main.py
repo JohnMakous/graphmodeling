@@ -83,8 +83,12 @@ def parabola_model(event):
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
 
+	c0 = pydom["input#p0"][0].value
 	c1 = pydom["input#p1"][0].value
+	c2 = pydom["input#p2"][0].value
+	c0float=float(c0)
 	c1float=float(c1)
+	c2float=float(c2)
 	
 	x = np.array([x1,x2,x3,x4])
 	y = np.array([y1,y2,y3,y4])
@@ -93,7 +97,7 @@ def parabola_model(event):
 	yfloat = [float(i) for i in y]
 		
 	x_model = np.arange(0.0,20.0,.01)
-	y_model = c1float*x_model*x_model
+	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
 	fig1, ax1 = plt.subplots()
