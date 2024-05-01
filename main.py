@@ -5,15 +5,15 @@ from pyscript import display
 
 # Check if input value is a number. This enables blank input boxes in the html data table to be ignored.
 def is_float(string):
-    c= remove(string.replace(".", ""))   # 'remove' removes the whitespace in string
-    if c.replace("-", "").isnumeric():
-        return True
-    else:
-        return False
+	c= remove(string.replace(".", ""))   # 'remove' removes the whitespace in string
+	if c.replace("-", "").isnumeric():
+		return True
+	else:
+		return False
 
 # Remove whitespace from string
-def remove(string):                      # 'remove' removes the whitespace in string
-    return string.replace(" ", "")
+def remove(string): 
+	return string.replace(" ", "")
 
 def update_graph(event):
 	x1 = pydom["input#x1"][0].value
