@@ -35,7 +35,7 @@ def update_graph(event):
 	while (i<len(listx)):
 		if is_float(listx[i])== False:
 			i=i+1
-    		else:
+		else:
 			a = remove(listx[i])
 			x_list.append(float(a))
 			i=i+1
@@ -46,7 +46,7 @@ def update_graph(event):
 	while (i<len(listy)):
 		if is_float(listy[i])== False:
 			i=i+1
-    		else:
+		else:
 			a = remove(listy[i])
 			y_list.append(float(a))
 			i=i+1
