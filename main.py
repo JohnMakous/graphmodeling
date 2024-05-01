@@ -3,6 +3,18 @@ import numpy as np
 from pyweb import pydom
 from pyscript import display
 
+# Check if input value is a number. This enables blank input boxes in the html data table to be ignored.
+def is_float(string):
+    c= remove(string.replace(".", ""))   # 'remove' removes the whitespace in string
+    if c.replace("-", "").isnumeric():
+        return True
+    else:
+        return False
+
+# Remove whitespace from string
+def remove(string):                      # 'remove' removes the whitespace in string
+    return string.replace(" ", "")
+
 def update_graph(event):
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
@@ -13,12 +25,38 @@ def update_graph(event):
 	y2 = pydom["input#y2"][0].value
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
+
+	listx = [x1,x2,x3,x4]
+	listy = [y1,y2,y3,y4]
 	
-	x = np.array([x1,x2,x3,x4])
-	y = np.array([y1,y2,y3,y4])
+	# Identify x input elements from data table that are numeric; store in an array
+	x_list=[]
+	i=0
+	while (i<len(listx)):
+		if is_float(listx[i])== False:
+			i=i+1
+    		else:
+			a = remove(listx[i])
+			x_list.append(float(a))
+			i=i+1
+
+	# Identify y input elements from data table that are numeric; store in an array
+	y_list=[]
+	i=0
+	while (i<len(listy)):
+		if is_float(listy[i])== False:
+			i=i+1
+    		else:
+			a = remove(listy[i])
+			y_list.append(float(a))
+			i=i+1
 	
-	xfloat = [float(i) for i in x]
-	yfloat = [float(i) for i in y]
+	#store float values from data table into arrays
+	x = np.array(x_list)
+	y = np.array(y_list)
+	
+	xfloat = x		# [float(i) for i in x]
+	yfloat = y		# [float(i) for i in y]
 
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(4,3))
 	fig1, ax1 = plt.subplots()
