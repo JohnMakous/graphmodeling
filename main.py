@@ -18,21 +18,25 @@ def remove(string):
 def update_graph(event):
 	if pydom["input#xmin"][0].value != "":
 		x_min = pydom["input#xmin"][0].value
+		x_min = float(x_min)
 	else:
 		x_min = 0
 	
 	if pydom["input#xmax"][0].value != "":
 		x_max = pydom["input#xmax"][0].value
+		x_max= float(x_max)
 	else:
 		x_max = 10
 
 	if pydom["input#ymin"][0].value != "":
 		y_min = pydom["input#ymin"][0].value
+		y_min = float(y_min)
 	else:
 		y_min = 0
 	
 	if pydom["input#ymax"][0].value != "":
 		y_max = pydom["input#ymax"][0].value
+		y_max= float(y_max)
 	else:
 		y_max = 10
 	
