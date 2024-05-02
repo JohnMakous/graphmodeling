@@ -96,6 +96,30 @@ def update_graph(event):
 	display(fig1, target='graph', append=False)
 
 def linear_model(event):
+	if pydom["input#xmin"][0].value != "":
+		x_min = pydom["input#xmin"][0].value
+		x_min = float(x_min)
+	else:
+		x_min = 0
+	
+	if pydom["input#xmax"][0].value != "":
+		x_max = pydom["input#xmax"][0].value
+		x_max= float(x_max)
+	else:
+		x_max = 10
+
+	if pydom["input#ymin"][0].value != "":
+		y_min = pydom["input#ymin"][0].value
+		y_min = float(y_min)
+	else:
+		y_min = 0
+	
+	if pydom["input#ymax"][0].value != "":
+		y_max = pydom["input#ymax"][0].value
+		y_max= float(y_max)
+	else:
+		y_max = 10
+	
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
@@ -127,14 +151,38 @@ def linear_model(event):
 	ax1.set_xlabel("x variable",fontsize=10)
 	ax1.set_ylabel("y variable",fontsize=10)
 	plt.plot(x_model, y_model)
-	ax1.set_xlim(0, 20)
-	ax1.set_ylim(0,30)
+	ax1.set_xlim(x_min, x_max)
+	ax1.set_ylim(y_min, y_max)
 	ax1.margins(y=0)
 	ax1.grid()
 	
 	display(fig1, target='graph', append=False)
 
 def parabola_model(event):
+	if pydom["input#xmin"][0].value != "":
+		x_min = pydom["input#xmin"][0].value
+		x_min = float(x_min)
+	else:
+		x_min = 0
+	
+	if pydom["input#xmax"][0].value != "":
+		x_max = pydom["input#xmax"][0].value
+		x_max= float(x_max)
+	else:
+		x_max = 10
+
+	if pydom["input#ymin"][0].value != "":
+		y_min = pydom["input#ymin"][0].value
+		y_min = float(y_min)
+	else:
+		y_min = 0
+	
+	if pydom["input#ymax"][0].value != "":
+		y_max = pydom["input#ymax"][0].value
+		y_max= float(y_max)
+	else:
+		y_max = 10
+	
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
@@ -168,8 +216,8 @@ def parabola_model(event):
 	ax1.set_xlabel("x variable",fontsize=10)
 	ax1.set_ylabel("y variable",fontsize=10)
 	plt.plot(x_model, y_model)
-	ax1.set_xlim(0, 20)
-	ax1.set_ylim(0,30)
+	ax1.set_xlim(x_min, x_max)
+	ax1.set_ylim(y_min, y_max)
 	ax1.margins(y=0)
 	ax1.grid()
 	
