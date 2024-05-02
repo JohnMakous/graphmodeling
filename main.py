@@ -80,8 +80,8 @@ def update_graph(event):
 	ax1.set_title("Graph of Data",fontsize=11)
 	ax1.set_xlabel("x variable",fontsize=10)
 	ax1.set_ylabel("y variable",fontsize=10)
-	ax1.set_xlim(0, 20)
-	ax1.set_ylim(0,30)
+	ax1.set_xlim(x_min, x_max)
+	ax1.set_ylim(y_min, y_max)
 	ax1.margins(y=0)
 	ax1.grid()
 	
