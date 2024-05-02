@@ -16,19 +16,19 @@ def remove(string):
 	return string.replace(" ", "")
 
 def update_graph(event):
-	if pydom["input#xmin"][0].value <>"":
+	if pydom["input#xmin"][0].value != "":
 		x_min = pydom["input#xmin"][0].value
 	elif: x_min = 0
 	
-	if pydom["input#xmax"][0].value<>"":
+	if pydom["input#xmax"][0].value != "":
 		x_max = pydom["input#xmax"][0].value
 	elif: x_max = 10
 
-	if pydom["input#ymin"][0].value <>"":
+	if pydom["input#ymin"][0].value != "":
 		y_min = pydom["input#ymin"][0].value
 	elif: y_min = 0
 	
-	if pydom["input#ymax"][0].value<>"":
+	if pydom["input#ymax"][0].value != "":
 		y_max = pydom["input#ymax"][0].value
 	elif: y_max = 10
 	
