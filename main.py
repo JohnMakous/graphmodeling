@@ -124,7 +124,9 @@ def linear_model(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
-	
+
+	x_label = pydom["input#xlabel"][0].value
+	y_label = pydom["input#ylabel"][0].value
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
@@ -189,6 +191,8 @@ def parabola_model(event):
 	else:
 		y_max = 10
 	
+	x_label = pydom["input#xlabel"][0].value
+	y_label = pydom["input#ylabel"][0].value
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
