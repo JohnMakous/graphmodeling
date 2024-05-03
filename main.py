@@ -40,6 +40,7 @@ def update_graph(event):
 	else:
 		y_max = 10
 
+	x_label = pydom["input#xlabel"][0].value
 	y_label = pydom["input#ylabel"][0].value
 	
 	x1 = pydom["input#x1"][0].value
@@ -88,7 +89,7 @@ def update_graph(event):
 	fig1, ax1 = plt.subplots()
 	ax1.scatter(xfloat,yfloat)
 	ax1.set_title("Graph of Data",fontsize=11)
-	ax1.set_xlabel("x variable",fontsize=10)
+	ax1.set_xlabel(x_label,fontsize=10)
 	ax1.set_ylabel(y_label,fontsize=10)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
