@@ -85,7 +85,7 @@ def update_graph(event):
 	xfloat = x		# [float(i) for i in x]
 	yfloat = y		# [float(i) for i in y]
 
-	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(3,2))
+	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(4,3))
 	#fig1, ax1 = plt.subplots()
 	ax1.scatter(xfloat,yfloat)
 	ax1.set_title("Graph of Data",fontsize=11)
@@ -152,7 +152,7 @@ def linear_model(event):
 	y_model = c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
-	fig1, ax1 = plt.subplots()
+	#fig1, ax1 = plt.subplots()
 	ax1.scatter(xfloat,yfloat)
 	ax1.set_title("Graph of Data",fontsize=11)
 	ax1.set_xlabel("x variable",fontsize=10)
@@ -220,7 +220,7 @@ def parabola_model(event):
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
-	fig1, ax1 = plt.subplots()
+	#fig1, ax1 = plt.subplots()
 	ax1.scatter(xfloat,yfloat)
 	ax1.set_title("Graph of Data",fontsize=11)
 	ax1.set_xlabel("x variable",fontsize=10)
