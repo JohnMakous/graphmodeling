@@ -93,7 +93,7 @@ def update_graph(event):
 	ax1.set_ylabel(y_label,fontsize=8)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	#ax1.margins(y=0)
+	ax1.margins(y=0)
 	ax1.grid()
 
 	plt.close('all')
