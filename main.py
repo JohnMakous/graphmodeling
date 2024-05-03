@@ -93,7 +93,7 @@ def update_graph(event):
 	ax1.margins(y=0)
 	ax1.grid()
 	
-	plt.close()
+	plt.close('all')
 	
 	display(fig1, target='graph', append=False)
 
@@ -158,7 +158,7 @@ def linear_model(event):
 	ax1.margins(y=0)
 	ax1.grid()
 
-	plt.close()
+	plt.close('all')
 	display(fig1, target='graph', append=False)
 
 def parabola_model(event):
@@ -224,5 +224,5 @@ def parabola_model(event):
 	ax1.margins(y=0)
 	ax1.grid()
 
-	plt.close()
+	plt.close('all')
 	display(fig1, target='graph', append=False)
