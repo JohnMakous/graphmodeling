@@ -96,7 +96,7 @@ def update_graph(event):
 	ax1.margins(y=0)
 	ax1.grid()
 
-	plot.yticks(fontsize=8)
+	plt.yticks(fontsize=8)
 	plt.close('all')
 	
 	display(fig1, target='graph', append=False)
