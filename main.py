@@ -143,7 +143,7 @@ def linear_model(event):
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
 		
-	x_model = np.arange(0.0,20.0,.01)
+	x_model = np.arange(0.0,x_max,.01)
 	y_model = c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
@@ -209,7 +209,7 @@ def parabola_model(event):
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
 		
-	x_model = np.arange(0.0,20.0,.01)
+	x_model = np.arange(0.0,x_max,.01)
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
