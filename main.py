@@ -16,7 +16,7 @@ def remove(string):
 	return string.replace(" ", "")
 
 def update_graph(event):
-	close()
+	plt.close()
 	if pydom["input#xmin"][0].value != "":
 		x_min = pydom["input#xmin"][0].value
 		x_min = float(x_min)
@@ -97,7 +97,7 @@ def update_graph(event):
 	display(fig1, target='graph', append=False)
 
 def linear_model(event):
-	close()
+	plt.close()
 	if pydom["input#xmin"][0].value != "":
 		x_min = pydom["input#xmin"][0].value
 		x_min = float(x_min)
@@ -161,7 +161,7 @@ def linear_model(event):
 	display(fig1, target='graph', append=False)
 
 def parabola_model(event):
-	close()
+	plt.close()
 	if pydom["input#xmin"][0].value != "":
 		x_min = pydom["input#xmin"][0].value
 		x_min = float(x_min)
