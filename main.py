@@ -39,6 +39,8 @@ def update_graph(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
+
+	y_label = pydom["input#ylabel"][0].value
 	
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
@@ -87,7 +89,7 @@ def update_graph(event):
 	ax1.scatter(xfloat,yfloat)
 	ax1.set_title("Graph of Data",fontsize=11)
 	ax1.set_xlabel("x variable",fontsize=10)
-	ax1.set_ylabel("y variable",fontsize=10)
+	ax1.set_ylabel(y_label,fontsize=10)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
 	ax1.margins(y=0)
