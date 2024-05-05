@@ -94,7 +94,7 @@ def update_graph(event):
 	ax1.set_ylim(y_min, y_max)
 	ax1.tick_params(axis='x', labelsize=8)
 	ax1.tick_params(axis='y', labelsize=8)
-	ax1.margins(0.5)
+	ax1.margins(1)
 	ax1.grid()
 
 	plt.close('all')
