@@ -37,15 +37,23 @@
 		border-color: blue;
 		}
 	
-	.graph {
+	.graph-block {
 		display: inline-block;
 		width: 650px;
 		border-style: solid;
 		border-color: black;
 		}
+
+	.graph-display {
+		<!-- display: inline-block; -->
+		<!-- width: 650px; -->
+		border-style: solid;
+		border-color: black;
+		}
+	
 	.graph-settings {
-		display: inline-block;
-		width: 650px;
+		<!-- display: inline-block; -->
+		<!-- width: 650px; -->
 		}
 </style>
 
@@ -147,9 +155,8 @@
 	</div>
 </div>
 
-<div class="graph"> 
-	<div id="graph"></div>
-	<!-- <div class="space"><br/></div> -->
+<div class="graph-block"> 
+	<div class="graph-display" id="graph"></div>
 	<div id="graph-settings"> 
 		<table border=2>
 		  <tr>
