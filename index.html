@@ -13,6 +13,10 @@
         <title>Graphmodeling</title>
     </head>
 <style>
+	.master-layout{
+		width: 850px;
+	}
+	
 	.data-column {
 		display: inline-block;
 		width: 100px;
@@ -25,7 +29,7 @@
 	.data-table {
 		display: inline-block;
 		vertical-align: top;
-		width: 220px;
+		width: 210px;
 		border-style: solid;
 		border-color: green;
 		}
@@ -40,7 +44,7 @@
 		border-color: blue;
 		}
 	.model-element {
-		vertical-align: top;
+		<!-- vertical-align: top; -->
 		font-size: 75%;
 		}
 	
@@ -71,202 +75,202 @@
 </style>
 
 <body>
-	    
-<div class="data-table">
-	<div class="data-column">
-		<div><label for="xlabel">x-label:</label>
-		    <input type="text" id="xlabel" size=6/></div>
-		<table border=1>
-		  <tr>
-		    <td align ="center"><label for="x1">x1</label></td>
-		    <td align ="center"><input type="text" id="x1" size=6/></td>
-		  </tr>
-		  <tr>
-		    <td align ="center"><label for="x2">x2</label></td>
-		    <td align ="center"><input type="text" id="x2" size=6/></td>
-		  </tr>
-		  <tr>
-		    <td align ="center"><label for="x3">x3</label></td>
-		    <td align ="center"><input type="text" id="x3" size=6/></td>
-		  </tr>
-		  <tr>
-		    <td align ="center"><label for="x4">x4</label></td>
-		    <td align ="center"><input type="text" id="x4" size=6/></td>
-		  </tr>
-		</table>
-	</div>
-
-	<div class="data-column">
-		<div><label for="ylabel">y-label:</label>
-		    <input type="text" id="ylabel" size=6/></div>
-		<table border=1>
-		  <tr>
-		    <td align ="right"><label for="y1">y1</label></td>
-		    <td><input type="text" id="y1" size=6/></td>
-		  </tr>
-		  <tr>
-		    <td align ="right"><label for="y2">y2</label></td>
-		    <td><input type="text" id="y2" size=6/></td>
-		  </tr>
-		  <tr>
-		    <td align ="right"><label for="y3">y3</label></td>
-		    <td><input type="text" id="y3" size=6/></td>
-		  </tr>
-		  <tr>
-		    <td align ="right"><label for="y4">y4</label></td>
-		    <td><input type="text" id="y4" size=6/></td>
-		  </tr>
-		</table>
-	</div>
-	<br>
-	<div><button id="submit-button" type="submit" py-click="update_graph">Plot data</button></div>
-</div>
-	
-<div class="models-list">
-	<div>
-		<center>Models to Fit Data</center>
-	</div>
-
-	<div class="model-element">
-		<table border=2>
-		  <tr>
-		    <td  colspan="2">Linear: y = c1*x + c0</td>
-		  </tr>
-		  <tr>
-		    <td><label for="lin_c0">c0</label></td>
-		    <td><input type="lin_c0" id="lin_c0" size=8/></td>
-		  </tr>
-		  <tr> 
-		    <td><label for="lin_c1">c1</label></td>
-		    <td><input type="lin_c1" id="lin_c1" size=8/></td>
-		  </tr>
-		</table>
-		<button id="submit-button" type="submit" py-click="linear_model">Try fit</button>
-		<div><br></div>
+<div class="master-layout">	    
+	<div class="data-table">
+		<div class="data-column">
+			<div><label for="xlabel">x-label:</label>
+			    <input type="text" id="xlabel" size=6/></div>
+			<table border=1>
+			  <tr>
+			    <td align ="center"><label for="x1">x1</label></td>
+			    <td align ="center"><input type="text" id="x1" size=6/></td>
+			  </tr>
+			  <tr>
+			    <td align ="center"><label for="x2">x2</label></td>
+			    <td align ="center"><input type="text" id="x2" size=6/></td>
+			  </tr>
+			  <tr>
+			    <td align ="center"><label for="x3">x3</label></td>
+			    <td align ="center"><input type="text" id="x3" size=6/></td>
+			  </tr>
+			  <tr>
+			    <td align ="center"><label for="x4">x4</label></td>
+			    <td align ="center"><input type="text" id="x4" size=6/></td>
+			  </tr>
+			</table>
 		</div>
 	
-	<div class="model-element">
-		<table border=2>
-		  <tr>
-		    <td  colspan="2">Quadratic: y = c2*x<sup>2</sup> + c1*x + c0</td>
-		  </tr>
-		  <tr>
-		    <td><label for="p0">c0</label></td>
-		    <td><input type="p0" id="p0" size=8/></td>
-		  </tr>
-		  <tr>
-		    <td><label for="p1">c1</label></td>
-		    <td><input type="p1" id="p1" size=8/></td>
-		  </tr>
-		  <tr>
-		    <td><label for="p2">c2</label></td>
-		    <td><input type="p2" id="p2" size=8/></td>
-		  </tr>
-		</table>
-		<button id="submit-button" type="submit" py-click="parabola_model">Try fit</button>
-		<div><br></div>
+		<div class="data-column">
+			<div><label for="ylabel">y-label:</label>
+			    <input type="text" id="ylabel" size=6/></div>
+			<table border=1>
+			  <tr>
+			    <td align ="right"><label for="y1">y1</label></td>
+			    <td><input type="text" id="y1" size=6/></td>
+			  </tr>
+			  <tr>
+			    <td align ="right"><label for="y2">y2</label></td>
+			    <td><input type="text" id="y2" size=6/></td>
+			  </tr>
+			  <tr>
+			    <td align ="right"><label for="y3">y3</label></td>
+			    <td><input type="text" id="y3" size=6/></td>
+			  </tr>
+			  <tr>
+			    <td align ="right"><label for="y4">y4</label></td>
+			    <td><input type="text" id="y4" size=6/></td>
+			  </tr>
+			</table>
+		</div>
+		<br>
+		<div><button id="submit-button" type="submit" py-click="update_graph">Plot data</button></div>
+	</div>
+		
+	<div class="models-list">
+		<div>
+			<center>Models to Fit Data</center>
+		</div>
+	
+		<div class="model-element">
+			<table border=2>
+			  <tr>
+			    <td  colspan="2">Linear: y = c1*x + c0</td>
+			  </tr>
+			  <tr>
+			    <td><label for="lin_c0">c0</label></td>
+			    <td><input type="lin_c0" id="lin_c0" size=8/></td>
+			  </tr>
+			  <tr> 
+			    <td><label for="lin_c1">c1</label></td>
+			    <td><input type="lin_c1" id="lin_c1" size=8/></td>
+			  </tr>
+			</table>
+			<button id="submit-button" type="submit" py-click="linear_model">Try fit</button>
+			<div><br></div>
+			</div>
+		
+		<div class="model-element">
+			<table border=2>
+			  <tr>
+			    <td  colspan="2">Quadratic: y = c2*x<sup>2</sup> + c1*x + c0</td>
+			  </tr>
+			  <tr>
+			    <td><label for="p0">c0</label></td>
+			    <td><input type="p0" id="p0" size=8/></td>
+			  </tr>
+			  <tr>
+			    <td><label for="p1">c1</label></td>
+			    <td><input type="p1" id="p1" size=8/></td>
+			  </tr>
+			  <tr>
+			    <td><label for="p2">c2</label></td>
+			    <td><input type="p2" id="p2" size=8/></td>
+			  </tr>
+			</table>
+			<button id="submit-button" type="submit" py-click="parabola_model">Try fit</button>
+			<div><br></div>
+		</div>
+		
+		<div class="model-element">
+			<table border=2>
+			  <tr>
+			    <td  colspan="2">Inverse: y = c/x</td>
+			  </tr>
+			  <tr>
+			    <td><label for="ic">c</label></td>
+			    <td><input type="ic" id="ic" size=8/></td>
+			  </tr>
+			</table>
+			<button id="submit-button" type="submit" py-click="inverse_model">Try fit</button>
+			<div><br></div>
+		</div>
+	
+		<!-- 
+		<div class="model-element">
+			<table border=2>
+			  <tr>
+			    <td  colspan="2">Linear: y = c1*x + c0</td>
+			  </tr>
+			  <tr>
+			    <td><label for="lin_c0">c0</label></td>
+			    <td><input type="lin_c0" id="lin_c0" size=8/></td>
+			  </tr>
+			  <tr> 
+			    <td><label for="lin_c1">c1</label></td>
+			    <td><input type="lin_c1" id="lin_c1" size=8/></td>
+			  </tr>
+			</table>
+			<button id="submit-button" type="submit" py-click="linear_model">Try fit</button>
+			<div><br></div>
+		</div>
+		
+		<div class="model-element">
+			<table border=2>
+			  <tr>
+			    <td  colspan="2">Quadratic: y = c2*x<sup>2</sup> + c1*x + c0</td>
+			  </tr>
+			  <tr>
+			    <td><label for="p0">c0</label></td>
+			    <td><input type="p0" id="p0" size=8/></td>
+			  </tr>
+			  <tr>
+			    <td><label for="p1">c1</label></td>
+			    <td><input type="p1" id="p1" size=8/></td>
+			  </tr>
+			  <tr>
+			    <td><label for="p2">c2</label></td>
+			    <td><input type="p2" id="p2" size=8/></td>
+			  </tr>
+			</table>
+			<button id="submit-button" type="submit" py-click="parabola_model">Try fit</button>
+			<div><br></div>
+		</div>
+		
+		<div class="model-element">
+			<table border=2>
+			  <tr>
+			    <td  colspan="2">Inverse: y = c/x</td>
+			  </tr>
+			  <tr>
+			    <td><label for="ic">c</label></td>
+			    <td><input type="ic" id="ic" size=8/></td>
+			  </tr>
+			</table>
+			<button id="submit-button" type="submit" py-click="inverse_model">Try fit</button>
+			<div><br></div>
+		</div>
+		-->
 	</div>
 	
-	<div class="model-element">
-		<table border=2>
-		  <tr>
-		    <td  colspan="2">Inverse: y = c/x</td>
-		  </tr>
-		  <tr>
-		    <td><label for="ic">c</label></td>
-		    <td><input type="ic" id="ic" size=8/></td>
-		  </tr>
-		</table>
-		<button id="submit-button" type="submit" py-click="inverse_model">Try fit</button>
-		<div><br></div>
+	<div class="graph-block"> 
+		<div class="graph-display" id="graph"></div>
+		<div class="blank-row"><p></p></div>
+		<div class="graph-settings"> 
+			<table border=2>
+			  <tr>
+			    <td  colspan="2">Graph Settings</td>
+			  </tr>
+			  <tr>
+			    <td><label for="xmin">xmin</label></td>
+			    <td><input type="xmin" id="xmin" size=8/></td>
+			  </tr>
+			  <tr> 
+			    <td><label for="xmax">xmax</label></td>
+			    <td><input type="xmax" id="xmax" size=8/></td>
+			  </tr>
+			  <tr>
+			    <td><label for="ymin">ymin</label></td>
+			    <td><input type="ymin" id="ymin" size=8/></td>
+			  </tr>
+			  <tr> 
+			    <td><label for="ymax">ymax</label></td>
+			    <td><input type="ymax" id="ymax" size=8/></td>
+			  </tr>
+			</table>
+			<button id="submit-button" type="submit" py-click="update_graph">Update graph settings</button>
+		</div>
 	</div>
-
-	<!-- 
-	<div class="model-element">
-		<table border=2>
-		  <tr>
-		    <td  colspan="2">Linear: y = c1*x + c0</td>
-		  </tr>
-		  <tr>
-		    <td><label for="lin_c0">c0</label></td>
-		    <td><input type="lin_c0" id="lin_c0" size=8/></td>
-		  </tr>
-		  <tr> 
-		    <td><label for="lin_c1">c1</label></td>
-		    <td><input type="lin_c1" id="lin_c1" size=8/></td>
-		  </tr>
-		</table>
-		<button id="submit-button" type="submit" py-click="linear_model">Try fit</button>
-		<div><br></div>
-	</div>
-	
-	<div class="model-element">
-		<table border=2>
-		  <tr>
-		    <td  colspan="2">Quadratic: y = c2*x<sup>2</sup> + c1*x + c0</td>
-		  </tr>
-		  <tr>
-		    <td><label for="p0">c0</label></td>
-		    <td><input type="p0" id="p0" size=8/></td>
-		  </tr>
-		  <tr>
-		    <td><label for="p1">c1</label></td>
-		    <td><input type="p1" id="p1" size=8/></td>
-		  </tr>
-		  <tr>
-		    <td><label for="p2">c2</label></td>
-		    <td><input type="p2" id="p2" size=8/></td>
-		  </tr>
-		</table>
-		<button id="submit-button" type="submit" py-click="parabola_model">Try fit</button>
-		<div><br></div>
-	</div>
-	
-	<div class="model-element">
-		<table border=2>
-		  <tr>
-		    <td  colspan="2">Inverse: y = c/x</td>
-		  </tr>
-		  <tr>
-		    <td><label for="ic">c</label></td>
-		    <td><input type="ic" id="ic" size=8/></td>
-		  </tr>
-		</table>
-		<button id="submit-button" type="submit" py-click="inverse_model">Try fit</button>
-		<div><br></div>
-	</div>
-	-->
-</div>
-
-<div class="graph-block"> 
-	<div class="graph-display" id="graph"></div>
-	<div class="blank-row"><p></p></div>
-	<div class="graph-settings"> 
-		<table border=2>
-		  <tr>
-		    <td  colspan="2">Graph Settings</td>
-		  </tr>
-		  <tr>
-		    <td><label for="xmin">xmin</label></td>
-		    <td><input type="xmin" id="xmin" size=8/></td>
-		  </tr>
-		  <tr> 
-		    <td><label for="xmax">xmax</label></td>
-		    <td><input type="xmax" id="xmax" size=8/></td>
-		  </tr>
-		  <tr>
-		    <td><label for="ymin">ymin</label></td>
-		    <td><input type="ymin" id="ymin" size=8/></td>
-		  </tr>
-		  <tr> 
-		    <td><label for="ymax">ymax</label></td>
-		    <td><input type="ymax" id="ymax" size=8/></td>
-		  </tr>
-		</table>
-		<button id="submit-button" type="submit" py-click="update_graph">Update graph settings</button>
-	</div>
-</div>
-	
+</div>	
 <section class="pyscript">
 	<script type="py" src="./main.py" config="./pyscript.toml"></script>
 </section>	
