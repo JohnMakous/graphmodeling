@@ -146,7 +146,25 @@
 		</div>
 	
 	<div class="model-element">
-		<p>model 2</p>
+		<table border=2>
+		  <tr>
+		    <td  colspan="2">Quadratic: y = c2*x<sup>2</sup> + c1*x + c0</td>
+		  </tr>
+		  <tr>
+		    <td><label for="p0">c0</label></td>
+		    <td><input type="p0" id="p0" size=8/></td>
+		  </tr>
+		  <tr>
+		    <td><label for="p1">c1</label></td>
+		    <td><input type="p1" id="p1" size=8/></td>
+		  </tr>
+		  <tr>
+		    <td><label for="p2">c2</label></td>
+		    <td><input type="p2" id="p2" size=8/></td>
+		  </tr>
+		</table>
+		<button id="submit-button" type="submit" py-click="parabola_model">Try fit</button
+		<div><br></div>
 	</div>
 	
 	<div class="model-element">
