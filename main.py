@@ -85,11 +85,11 @@ def update_graph(event):
 	xfloat = x		# [float(i) for i in x]
 	yfloat = y		# [float(i) for i in y]
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(4,3))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
 	ax1.scatter(xfloat,yfloat)
 	plt.title("Graph of Data", fontsize=8)
-	plt.xlabel(x_label, fontsize=8)  
-	plt.ylabel(y_label, fontsize=8)
+	plt.xlabel(x_label, fontsize=6)  
+	plt.ylabel(y_label, fontsize=6)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
 	ax1.tick_params(axis='x', labelsize=4)
