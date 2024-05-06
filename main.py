@@ -223,16 +223,82 @@ def parabola_model(event):
 	x_model = np.arange(0.0,x_max,.01)
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
-	fig1, ax1 = plt.subplots(1,dpi=150,figsize=(5,3))
-	#fig1, ax1 = plt.subplots()
-	ax1.scatter(xfloat,yfloat)
-	ax1.set_title("Graph of Data",fontsize=11)
-	ax1.set_xlabel("x variable",fontsize=10)
-	ax1.set_ylabel("y variable",fontsize=10)
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
+	ax1.scatter(xfloat,yfloat, 10)
 	plt.plot(x_model, y_model)
+	plt.title("Graph of Data", fontsize=6)
+	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=6, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.margins(y=0)
+	ax1.tick_params(axis='x', labelsize=4)
+	ax1.tick_params(axis='y', labelsize=4)
+	ax1.margins(1)
+	ax1.grid()
+
+	plt.close('all')
+	display(fig1, target='graph', append=False)
+
+def inverse_model(event):
+	if pydom["input#xmin"][0].value != "":
+		x_min = pydom["input#xmin"][0].value
+		x_min = float(x_min)
+	else:
+		x_min = 0
+	
+	if pydom["input#xmax"][0].value != "":
+		x_max = pydom["input#xmax"][0].value
+		x_max= float(x_max)
+	else:
+		x_max = 10
+
+	if pydom["input#ymin"][0].value != "":
+		y_min = pydom["input#ymin"][0].value
+		y_min = float(y_min)
+	else:
+		y_min = 0
+	
+	if pydom["input#ymax"][0].value != "":
+		y_max = pydom["input#ymax"][0].value
+		y_max= float(y_max)
+	else:
+		y_max = 10
+	
+	x_label = pydom["input#xlabel"][0].value
+	y_label = pydom["input#ylabel"][0].value
+	x1 = pydom["input#x1"][0].value
+	x2 = pydom["input#x2"][0].value
+	x3 = pydom["input#x3"][0].value
+	x4 = pydom["input#x4"][0].value
+
+	y1 = pydom["input#y1"][0].value
+	y2 = pydom["input#y2"][0].value
+	y3 = pydom["input#y3"][0].value
+	y4 = pydom["input#y4"][0].value
+
+	c = pydom["input#c"][0].value
+	c0float=float(c0)
+	
+	x = np.array([x1,x2,x3,x4])
+	y = np.array([y1,y2,y3,y4])
+	
+	xfloat = [float(i) for i in x]
+	yfloat = [float(i) for i in y]
+		
+	x_model = np.arange(0.0,x_max,.01)
+	y_model = c0float/x_model
+
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
+	ax1.scatter(xfloat,yfloat, 10)
+	plt.plot(x_model, y_model)
+	plt.title("Graph of Data", fontsize=6)
+	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=6, labelpad=1)
+	ax1.set_xlim(x_min, x_max)
+	ax1.set_ylim(y_min, y_max)
+	ax1.tick_params(axis='x', labelsize=4)
+	ax1.tick_params(axis='y', labelsize=4)
+	ax1.margins(1)
 	ax1.grid()
 
 	plt.close('all')
