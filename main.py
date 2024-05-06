@@ -87,7 +87,7 @@ def update_graph(event):
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
 	ax1.scatter(xfloat,yfloat, 10)
-	plt.title("Graph of Data", fontsize=8)
+	plt.title("Graph of Data", fontsize=6)
 	#plt.xlabel(x_label, fontsize=6)  
 	#plt.ylabel(y_label, fontsize=6)
 	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
