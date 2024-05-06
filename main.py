@@ -276,7 +276,7 @@ def inverse_model(event):
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
 
-	c = pydom["input#c"][0].value
+	c0 = pydom["input#ic"][0].value
 	c0float=float(c0)
 	
 	x = np.array([x1,x2,x3,x4])
