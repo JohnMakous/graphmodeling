@@ -168,7 +168,21 @@
 	</div>
 	
 	<div class="model-element">
-		<p>model 3</p>
+		<table border=2>
+		  <tr>
+		    <td  colspan="2">Linear: y = c1*x + c0</td>
+		  </tr>
+		  <tr>
+		    <td><label for="lin_c0">c0</label></td>
+		    <td><input type="lin_c0" id="lin_c0" size=8/></td>
+		  </tr>
+		  <tr> 
+		    <td><label for="lin_c1">c1</label></td>
+		    <td><input type="lin_c1" id="lin_c1" size=8/></td>
+		  </tr>
+		</table>
+		<button id="submit-button" type="submit" py-click="linear_model">Try fit</button>
+		<div><br></div>
 	</div>
 
 	<!-- 
