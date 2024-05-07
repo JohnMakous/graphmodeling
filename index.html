@@ -130,7 +130,8 @@
 		<div>
 			<center>Models to Fit Data</center>
 		</div>
-	
+		
+		<!-- Linear model -->
 		<div class="model-element">
 			<table border=1>
 			  <tr>
@@ -147,8 +148,9 @@
 			</table>
 			<button id="submit-button" type="submit" py-click="linear_model">Try fit</button>
 			<div><br></div>
-			</div>
-		
+		</div>
+
+		<!-- Quadratic model -->
 		<div class="model-element">
 			<table border=1>
 			  <tr>
@@ -170,7 +172,8 @@
 			<button id="submit-button" type="submit" py-click="parabola_model">Try fit</button>
 			<div><br></div>
 		</div>
-		
+
+		<!-- Inverse model -->
 		<div class="model-element">
 			<table border=1>
 			  <tr>
@@ -184,62 +187,25 @@
 			<button id="submit-button" type="submit" py-click="inverse_model">Try fit</button>
 			<div><br></div>
 		</div>
-	
-		<!-- 
+
+		<!-- Square root model -->
 		<div class="model-element">
 			<table border=1>
 			  <tr>
-			    <td  colspan="2">Linear: y = c1*x + c0</td>
+			    <td  colspan="2">Square root: y = sqrt(x) + c0</td>
 			  </tr>
 			  <tr>
-			    <td><label for="lin_c0">c0</label></td>
-			    <td><input type="lin_c0" id="lin_c0" size=10/></td>
+			    <td><label for="sq_c0">c0</label></td>
+			    <td><input type="sq_c0" id="sq_c0" size=10/></td>
 			  </tr>
 			  <tr> 
-			    <td><label for="lin_c1">c1</label></td>
-			    <td><input type="lin_c1" id="lin_c1" size=10/></td>
+			    <td><label for="sq_c1">c1</label></td>
+			    <td><input type="sq_c1" id="sq_c1" size=10/></td>
 			  </tr>
 			</table>
-			<button id="submit-button" type="submit" py-click="linear_model">Try fit</button>
+			<button id="submit-button" type="submit" py-click="sqrt_model">Try fit</button>
 			<div><br></div>
 		</div>
-		
-		<div class="model-element">
-			<table border=2>
-			  <tr>
-			    <td  colspan="2">Quadratic: y = c2*x<sup>2</sup> + c1*x + c0</td>
-			  </tr>
-			  <tr>
-			    <td><label for="p0">c0</label></td>
-			    <td><input type="p0" id="p0" size=10/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="p1">c1</label></td>
-			    <td><input type="p1" id="p1" size=10/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="p2">c2</label></td>
-			    <td><input type="p2" id="p2" size=10/></td>
-			  </tr>
-			</table>
-			<button id="submit-button" type="submit" py-click="parabola_model">Try fit</button>
-			<div><br></div>
-		</div>
-		
-		<div class="model-element">
-			<table border=2>
-			  <tr>
-			    <td  colspan="2">Inverse: y = c/x</td>
-			  </tr>
-			  <tr>
-			    <td><label for="ic">c</label></td>
-			    <td><input type="ic" id="ic" size=10/></td>
-			  </tr>
-			</table>
-			<button id="submit-button" type="submit" py-click="inverse_model">Try fit</button>
-			<div><br></div>
-		</div>
-		-->
 	</div>
 	
 	<div class="graph-block"> 
