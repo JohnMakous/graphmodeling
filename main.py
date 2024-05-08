@@ -170,7 +170,7 @@ def linear_model(event):
 	plt.close('all')
 	display(fig1, target='graph', append=False)
 
-def parabola_model(event):
+def quadratic_model(event):
 	if pydom["input#xmin"][0].value != "":
 		x_min = pydom["input#xmin"][0].value
 		x_min = float(x_min)
@@ -207,9 +207,9 @@ def parabola_model(event):
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
 
-	c0 = pydom["input#p0"][0].value
-	c1 = pydom["input#p1"][0].value
-	c2 = pydom["input#p2"][0].value
+	c0 = pydom["input#q0"][0].value
+	c1 = pydom["input#q1"][0].value
+	c2 = pydom["input#q2"][0].value
 	c0float=float(c0)
 	c1float=float(c1)
 	c2float=float(c2)
