@@ -140,10 +140,17 @@ def linear_model(event):
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
 
-	c0 = pydom["input#lin_c0"][0].value
-	c1 = pydom["input#lin_c1"][0].value
-	c0float=float(c0)
-	c1float=float(c1)
+	if pydom["input#lin_c0"][0].value != "":
+		lin_c0 = pydom["input#lin_c0"][0].value
+		lin_c0 = float(lin_c0)
+	else:
+		lin_c0 = 0
+	
+	if pydom["input#lin_c1"][0].value != "":
+		lin_c1 = pydom["input#lin_c1"][0].value
+		lin_c1 = float(lin_c1)
+	else:
+		lin_c1 = 0
 	
 	x = np.array([x1,x2,x3,x4])
 	y = np.array([y1,y2,y3,y4])
