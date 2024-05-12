@@ -227,7 +227,7 @@ def quadratic_model(event):
 	else:
 		c1 = 0
 
-	if pydom["input#q2][0].value != "":
+	if pydom["input#q2"][0].value != "":
 		c2 = pydom["input#q2"][0].value
 	else:
 		c2 = 0
