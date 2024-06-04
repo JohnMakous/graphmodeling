@@ -212,10 +212,6 @@ def linear_model(event):
 	#store float values from data table into arrays
 	xfloat = np.array(x_list)
 	yfloat = np.array(y_list)
-	
-	#xfloat = x		# [float(i) for i in x]
-	#yfloat = y		# [float(i) for i in y]
-
 
 	if pydom["input#lin_c0"][0].value != "":
 		c0 = pydom["input#lin_c0"][0].value
@@ -231,9 +227,6 @@ def linear_model(event):
 
 	c0float=float(c0)
 	c1float=float(c1)
-	
-	xfloat = [float(i) for i in x]
-	yfloat = [float(i) for i in y]
 		
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*x_model + c0float
