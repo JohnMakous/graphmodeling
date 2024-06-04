@@ -47,14 +47,36 @@ def update_graph(event):
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
 	x4 = pydom["input#x4"][0].value
+	x5 = pydom["input#x5"][0].value
+	x6 = pydom["input#x6"][0].value
+	x7 = pydom["input#x7"][0].value
+	x8 = pydom["input#x8"][0].value
+	x9 = pydom["input#x9"][0].value
+	x10 = pydom["input#x10"][0].value
+	x11 = pydom["input#x11"][0].value
+	x12 = pydom["input#x12"][0].value
+	x13 = pydom["input#x13"][0].value
+	x14 = pydom["input#x14"][0].value
+	x15 = pydom["input#x15"][0].value
 
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
+	y5 = pydom["input#y5"][0].value
+	y6 = pydom["input#y6"][0].value
+	y7 = pydom["input#y7"][0].value
+	y8 = pydom["input#y8"][0].value
+	y9 = pydom["input#y9"][0].value
+	y10 = pydom["input#y10"][0].value
+	y11 = pydom["input#y11"][0].value
+	y12 = pydom["input#y12"][0].value
+	y13 = pydom["input#y13"][0].value
+	y14 = pydom["input#y14"][0].value
+	y15 = pydom["input#y15"][0].value
 
-	listx = [x1,x2,x3,x4]
-	listy = [y1,y2,y3,y4]
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15]
 	
 	# Identify x input elements from data table that are numeric; store in an array
 	x_list=[]
@@ -134,11 +156,66 @@ def linear_model(event):
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
 	x4 = pydom["input#x4"][0].value
+	x5 = pydom["input#x5"][0].value
+	x6 = pydom["input#x6"][0].value
+	x7 = pydom["input#x7"][0].value
+	x8 = pydom["input#x8"][0].value
+	x9 = pydom["input#x9"][0].value
+	x10 = pydom["input#x10"][0].value
+	x11 = pydom["input#x11"][0].value
+	x12 = pydom["input#x12"][0].value
+	x13 = pydom["input#x13"][0].value
+	x14 = pydom["input#x14"][0].value
+	x15 = pydom["input#x15"][0].value
 
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
+	y5 = pydom["input#y5"][0].value
+	y6 = pydom["input#y6"][0].value
+	y7 = pydom["input#y7"][0].value
+	y8 = pydom["input#y8"][0].value
+	y9 = pydom["input#y9"][0].value
+	y10 = pydom["input#y10"][0].value
+	y11 = pydom["input#y11"][0].value
+	y12 = pydom["input#y12"][0].value
+	y13 = pydom["input#y13"][0].value
+	y14 = pydom["input#y14"][0].value
+	y15 = pydom["input#y15"][0].value
+
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15]
+	
+	# Identify x input elements from data table that are numeric; store in an array
+	x_list=[]
+	i=0
+	while (i<len(listx)):
+		if is_float(listx[i])== False:
+			i=i+1
+		else:
+			a = remove(listx[i])
+			x_list.append(float(a))
+			i=i+1
+
+	# Identify y input elements from data table that are numeric; store in an array
+	y_list=[]
+	i=0
+	while (i<len(listy)):
+		if is_float(listy[i])== False:
+			i=i+1
+		else:
+			a = remove(listy[i])
+			y_list.append(float(a))
+			i=i+1
+	
+	#store float values from data table into arrays
+	x = np.array(x_list)
+	y = np.array(y_list)
+	
+	xfloat = x		# [float(i) for i in x]
+	yfloat = y		# [float(i) for i in y]
+
 
 	if pydom["input#lin_c0"][0].value != "":
 		c0 = pydom["input#lin_c0"][0].value
@@ -154,9 +231,6 @@ def linear_model(event):
 
 	c0float=float(c0)
 	c1float=float(c1)
-	
-	x = np.array([x1,x2,x3,x4])
-	y = np.array([y1,y2,y3,y4])
 	
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
