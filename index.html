@@ -222,7 +222,7 @@
 		<div class="model-element">
 			<table border=1>
 			  <tr>
-			    <td  colspan="2">Power: y = c*x^n</td>
+			    <td  colspan="2">Power: y = c*x^n + b</td>
 			  </tr>
 			   <tr> 
 			    <td><label for="powerc">c</label></td>
@@ -231,6 +231,10 @@
 			  <tr>
 			    <td><label for="powern">n</label></td>
 			    <td><input type="powern" id="powern" size=10/></td>
+			  </tr>
+			  <tr>
+			    <td><label for="powerb">b</label></td>
+			    <td><input type="powerb" id="powerb" size=10/></td>
 			  </tr>
 			</table>
 			<button id="submit-button" type="submit" py-click="power_model">Try fit</button>
