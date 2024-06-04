@@ -370,14 +370,14 @@ def sqrt_model(event):
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
 
-	if pydom["input#sq_c0"][0].value != "":
-		c0 = pydom["input#sq_c0"][0].value
+	if pydom["input#sqrt_c0"][0].value != "":
+		c0 = pydom["input#sqrt_c0"][0].value
 		c0 = float(c0)
 	else:
 		c0 = 0
 	
-	if pydom["input#sq_c1"][0].value != "":
-		c1 = pydom["input#sq_c1"][0].value
+	if pydom["input#sqrt_c1"][0].value != "":
+		c1 = pydom["input#sqrt_c1"][0].value
 		c1 = float(c1)
 	else:
 		c1 = 0
