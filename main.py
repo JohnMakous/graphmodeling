@@ -471,7 +471,7 @@ def power_model(event):
 	yfloat = [float(i) for i in y]
 		
 	x_model = np.arange(0.0,x_max,.001)
-	y_model = c0float*x_model**power_n_float + 5
+	y_model = c0float*x_model**power_n_float + power_b_float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
 	ax1.scatter(xfloat,yfloat, 10)
