@@ -112,7 +112,7 @@ def linear_model(event):
 	
 	if pydom["input#xmax"][0].value != "":
 		x_max = pydom["input#xmax"][0].value
-		x_max= float(x_max)
+		x_max = float(x_max)
 	else:
 		x_max = 10
 
@@ -189,7 +189,7 @@ def quadratic_model(event):
 	
 	if pydom["input#xmax"][0].value != "":
 		x_max = pydom["input#xmax"][0].value
-		x_max= float(x_max)
+		x_max = float(x_max)
 	else:
 		x_max = 10
 
@@ -270,7 +270,7 @@ def inverse_model(event):
 	
 	if pydom["input#xmax"][0].value != "":
 		x_max = pydom["input#xmax"][0].value
-		x_max= float(x_max)
+		x_max = float(x_max)
 	else:
 		x_max = 10
 
@@ -299,6 +299,13 @@ def inverse_model(event):
 	y4 = pydom["input#y4"][0].value
 
 	c0 = pydom["input#ic"][0].value
+
+	if pydom["input#ic"][0].value != "":
+		c0 = pydom["input#ic"][0].value
+		c0 = float(c0)
+	else:
+		c0 = 0
+
 	c0float=float(c0)
 	
 	x = np.array([x1,x2,x3,x4])
@@ -363,8 +370,18 @@ def sqrt_model(event):
 	y3 = pydom["input#y3"][0].value
 	y4 = pydom["input#y4"][0].value
 
-	c0 = pydom["input#sq_c0"][0].value
-	c1 = pydom["input#sq_c1"][0].value
+	if pydom["input#sq_c0"][0].value != "":
+		c0 = pydom["input#sq_c0"][0].value
+		c0 = float(c0)
+	else:
+		c0 = 0
+	
+	if pydom["input#sq_c1"][0].value != "":
+		c1 = pydom["input#sq_c1"][0].value
+		c1 = float(c1)
+	else:
+		c1 = 0
+	
 	c0float=float(c0)
 	c1float=float(c1)
 	
