@@ -455,8 +455,14 @@ def power_model(event):
 	else:
 		power_n = 0
 
+	if pydom["input#powerb"][0].value != "":
+		power_b = pydom["input#powerb"][0].value
+	else:
+		power_b = 0
+
 	c0float=float(c0)
 	power_n_float = float(power_n)
+	power_b_float = float(power_b)
 	
 	x = np.array([x1,x2,x3,x4])
 	y = np.array([y1,y2,y3,y4])
@@ -465,7 +471,7 @@ def power_model(event):
 	yfloat = [float(i) for i in y]
 		
 	x_model = np.arange(0.0,x_max,.001)
-	y_model = c0float*x_model**power_n_float
+	y_model = c0float*x_model**power_n_float + power_b_float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
 	ax1.scatter(xfloat,yfloat, 10)
