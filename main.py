@@ -161,7 +161,7 @@ def linear_model(event):
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
 		
-	x_model = np.arange(0.0,x_max,.01)
+	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
@@ -242,7 +242,7 @@ def quadratic_model(event):
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
 		
-	x_model = np.arange(0.0,x_max,.01)
+	x_model = np.arange(0.0,x_max,.001)
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
@@ -314,7 +314,7 @@ def inverse_model(event):
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
 		
-	x_model = np.arange(0.0,x_max,.01)
+	x_model = np.arange(0.0,x_max,.001)
 	y_model = c0float/x_model
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
@@ -391,7 +391,7 @@ def sqrt_model(event):
 	xfloat = [float(i) for i in x]
 	yfloat = [float(i) for i in y]
 		
-	x_model = np.arange(0.0,x_max,.01)
+	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*np.sqrt(x_model) + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
