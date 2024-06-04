@@ -217,6 +217,25 @@
 			<button id="submit-button" type="submit" py-click="sqrt_model">Try fit</button>
 			<div><br></div>
 		</div>
+
+		<!-- Power model -->
+		<div class="model-element">
+			<table border=1>
+			  <tr>
+			    <td  colspan="2">Power: y = c*x^n</td>
+			  </tr>
+			   <tr> 
+			    <td><label for="powerc">c</label></td>
+			    <td><input type="powerc" id="powerc" size=10/></td>
+			  </tr>
+			  <tr>
+			    <td><label for="powern">n</label></td>
+			    <td><input type="powern" id="powern" size=10/></td>
+			  </tr>
+			</table>
+			<button id="submit-button" type="submit" py-click="power_model">Try fit</button>
+			<div><br></div>
+		</div>
 	</div>
 	
 	<div class="graph-block"> 
