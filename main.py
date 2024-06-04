@@ -101,11 +101,11 @@ def update_graph(event):
 			i=i+1
 	
 	#store float values from data table lists into arrays
-	x = np.array(x_list)
-	y = np.array(y_list)
+	xfloat = np.array(x_list)
+	yfloat = np.array(y_list)
 	
-	xfloat = x		# [float(i) for i in x]
-	yfloat = y		# [float(i) for i in y]
+	#xfloat = x		# [float(i) for i in x]
+	#yfloat = y		# [float(i) for i in y]
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
 	ax1.scatter(xfloat,yfloat, 10)
