@@ -497,7 +497,7 @@ def inverse_model(event):
 	ax1.grid()
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Model: y = \frac{%.2f}{x} $' % (c0float)
+	textstr1 = r'$Model: y = \frac{%.2f}{x^{}} $' % (c0float)
 	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
         	verticalalignment='top', bbox=props)
