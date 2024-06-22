@@ -496,6 +496,12 @@ def inverse_model(event):
 	ax1.margins(1)
 	ax1.grid()
 
+	# place a text box in upper middle in axes coords
+	textstr1 = r'$Model: y = %.2f/x $' % (c0float)
+	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+        	verticalalignment='top', bbox=props)
+
 	plt.close('all')
 	display(fig1, target='graph', append=False)
 
@@ -617,6 +623,12 @@ def sqrt_model(event):
 	ax1.tick_params(axis='y', labelsize=4)
 	ax1.margins(1)
 	ax1.grid()
+
+	# place a text box in upper middle in axes coords
+	textstr1 = r'$Model: y = %.2f sqrt{x} + %.2f$' % (c1float, c0float)
+	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+        	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -744,6 +756,12 @@ def power_model(event):
 	ax1.tick_params(axis='y', labelsize=4)
 	ax1.margins(1)
 	ax1.grid()
+
+	# place a text box in upper middle in axes coords
+	textstr1 = r'$Model: y = %.2f x^{%.2f} + %.2f$' % (c0float, power_n_float, power_b_float)
+	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+        	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
