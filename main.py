@@ -246,7 +246,7 @@ def linear_model(event):
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x + %.2f$' % (c1float, c0float)
 	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.3, 0.95, textstr1, transform=ax1.transAxes, fontsize=12,
+	ax1.text(0.05, 0.95, textstr1, transform=ax1.transAxes, fontsize=8,
         	verticalalignment='top', bbox=props)
 
 	plt.close('all')
