@@ -17,9 +17,17 @@
 		display: grid;
 		grid-template-columns: 110px 180px 460px;
 		grid-template-rows: 600px 600px 600px;
-		gap: 10px;
+		gap: 1px;
 		background-color: #2196F3;
-		padding: 10px;
+		padding: 5px;
+	}
+
+	.grid-container > div {
+		  background-color: rgba(255, 255, 255, 0.8);
+		  text-align: center;
+		  padding: 20px 0;
+		  font-size: 30px;
+	}
 
 	.title{
 		margin: 1px;
@@ -29,18 +37,13 @@
 	}
 	
 	.data-column {
-		display: inline-block;
-		width: 100px;
+		grid-area: data;
 		font-size: 75%;
-		background-color: rgb(240, 248, 255);
-		border-style: solid;
-		border-color: black;
-		border-width: thin;
 		}
 	
 	.data-table {
-		display: inline-block;
-		vertical-align: top;
+		grid-area: data-table;
+		font-size: 75%;
 		width: 220px;
 		border-style: solid;
 		border-color: green;
@@ -86,11 +89,15 @@
 </style>
 
 <body>
-<div class="master-layout">   
-	<div class="title">
-		<p style="text-align: center"><strong><font size="+1">Graphmodeling</font></strong><br>
-		Fill in data in the table. Plot data. Choose a model; adjust the coefficients to find a good fit.</p>
-	</div>
+<h2>Graphmodeling</h2>
+<p>Fill in data in the table. Plot data. Choose a model; adjust the coefficients to find a good fit.</p>
+<div class="grid-container">
+  <div class="header">
+    <h2>Header</h2>
+  </div>
+  
+  <div class="left" style="background-color:#aaa;">Column</div>
+	
 	<div class="data-table">
 		<div class="data-column">
 			<div><label for="xlabel">x-label:</label>
