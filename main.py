@@ -40,12 +40,12 @@ def update_graph(event):
 	else:
 		y_max = 10
 
-	if pydom["input#x_label"][0].value != "":
+	if pydom["input#xlabel"][0].value != "":
 		x_label = pydom["input#xlabel"][0].value
 	else:
 		x_label = "x"
 
-	if pydom["input#y_label"][0].value != "":
+	if pydom["input#ylabel"][0].value != "":
 		y_label = pydom["input#ylabel"][0].value
 	else:
 		y_label = "y"
@@ -155,12 +155,12 @@ def linear_model(event):
 	else:
 		y_max = 10
 
-	if pydom["input#x_label"][0].value != "":
+	if pydom["input#xlabel"][0].value != "":
 		x_label = pydom["input#xlabel"][0].value
 	else:
 		x_label = "x"
 
-	if pydom["input#y_label"][0].value != "":
+	if pydom["input#ylabel"][0].value != "":
 		y_label = pydom["input#ylabel"][0].value
 	else:
 		y_label = "y"
