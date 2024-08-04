@@ -107,7 +107,7 @@ def update_graph(event):
 	#xfloat = x		# [float(i) for i in x]
 	#yfloat = y		# [float(i) for i in y]
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(6,4))
 	ax1.scatter(xfloat,yfloat, 10)
 	plt.title(y_label + " vs. "+ x_label, fontsize=6)
 	#plt.xlabel(x_label, fontsize=6)  
@@ -362,7 +362,7 @@ def quadratic_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(6,4))
 	ax1.scatter(xfloat,yfloat, 10)
 	plt.plot(x_model, y_model)
 	plt.title(y_label + " vs. "+ x_label, fontsize=6)
@@ -483,7 +483,7 @@ def inverse_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c0float/x_model
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(6,4))
 	ax1.scatter(xfloat,yfloat, 10)
 	plt.plot(x_model, y_model)
 	plt.title(y_label + " vs. "+ x_label, fontsize=6)
@@ -611,7 +611,7 @@ def sqrt_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*np.sqrt(x_model) + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(6,4))
 	ax1.scatter(xfloat,yfloat, 10)
 	plt.plot(x_model, y_model)
 	plt.title(y_label + " vs. "+ x_label, fontsize=6)
@@ -744,7 +744,7 @@ def power_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c0float*x_model**power_n_float + power_b_float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(6,4))
 	ax1.scatter(xfloat,yfloat, 10)
 	plt.plot(x_model, y_model)
 	plt.title(y_label + " vs. "+ x_label, fontsize=6)
