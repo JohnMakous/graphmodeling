@@ -41,14 +41,14 @@ def update_graph(event):
 		y_max = 10
 
 	if pydom["input#x_label"][0].value != "":
-		x_label = pydom["input#x_label"][0].value
+		xlabel = pydom["input#xlabel"][0].value
 	else:
-		x_label = "x"
+		xlabel = "x"
 
 	if pydom["input#y_label"][0].value != "":
-		y_label = pydom["input#y_label"][0].value
+		ylabel = pydom["input#ylabel"][0].value
 	else:
-		y_label = "y"
+		ylabel = "y"
 
 	x_label = pydom["input#xlabel"][0].value
 	y_label = pydom["input#ylabel"][0].value
