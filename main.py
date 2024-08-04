@@ -124,7 +124,7 @@ def update_graph(event):
 	ax1.tick_params(axis='x', labelsize=4)
 	ax1.tick_params(axis='y', labelsize=4)
 	ax1.margins(1)
-	ax1.grid(linewidth=0.5)
+	ax1.grid(linewidth=0.4)
 
 	plt.close('all')
 	
@@ -255,7 +255,7 @@ def linear_model(event):
 	ax1.tick_params(axis='x', labelsize=4)
 	ax1.tick_params(axis='y', labelsize=4)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4)
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x + %.2f$' % (c1float, c0float)
 	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
@@ -386,7 +386,7 @@ def quadratic_model(event):
 	ax1.tick_params(axis='x', labelsize=4)
 	ax1.tick_params(axis='y', labelsize=4)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4)
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x^{2} + %.2f x + %.2f$' % (c2float, c1float, c0float)
@@ -507,7 +507,7 @@ def inverse_model(event):
 	ax1.tick_params(axis='x', labelsize=4)
 	ax1.tick_params(axis='y', labelsize=4)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4)
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = \frac{%.2f}{x} $' % (c0float)
@@ -635,7 +635,7 @@ def sqrt_model(event):
 	ax1.tick_params(axis='x', labelsize=4)
 	ax1.tick_params(axis='y', labelsize=4)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4)
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f \sqrt{x} + %.2f$' % (c1float, c0float)
@@ -768,7 +768,7 @@ def power_model(event):
 	ax1.tick_params(axis='x', labelsize=4)
 	ax1.tick_params(axis='y', labelsize=4)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4)
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x^{%.2f} + %.2f$' % (c0float, power_n_float, power_b_float)
