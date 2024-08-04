@@ -231,7 +231,7 @@ def linear_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*x_model + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(6,4))
 	ax1.scatter(xfloat,yfloat, 10)
 	plt.plot(x_model, y_model)
 	plt.title(y_label + " vs. "+ x_label, fontsize=6)
