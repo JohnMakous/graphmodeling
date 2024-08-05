@@ -114,7 +114,7 @@ def update_graph(event):
 	#xfloat = x		# [float(i) for i in x]
 	#yfloat = y		# [float(i) for i in y]
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(4,3.5))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3.6,3.5))
 	ax1.scatter(xfloat,yfloat, 15)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
