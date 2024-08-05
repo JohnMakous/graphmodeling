@@ -121,8 +121,8 @@ def update_graph(event):
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=4)
-	ax1.tick_params(axis='y', labelsize=4)
+	ax1.tick_params(axis='x', labelsize=6)
+	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
 	ax1.grid(linewidth=0.4)
 
