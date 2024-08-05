@@ -51,8 +51,8 @@ def update_graph(event):
 		y_label = "y"
 
 	if pydom["input#graphscale"][0].value != "":
-		y_max = pydom["input#graphscale"][0].value
-		graph_scale= float(graphscale)
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
 	else:
 		graph_scale = 1.0
 	
@@ -127,8 +127,8 @@ def update_graph(event):
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=6)
-	ax1.tick_params(axis='y', labelsize=6)
+	ax1.tick_params(axis='x', labelsize=8)
+	ax1.tick_params(axis='y', labelsize=8)
 	ax1.margins(1)
 	ax1.grid(linewidth=0.4)
 
@@ -170,6 +170,12 @@ def linear_model(event):
 		y_label = pydom["input#ylabel"][0].value
 	else:
 		y_label = "y"
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
 	
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
@@ -250,7 +256,7 @@ def linear_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*x_model + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(5,3))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.3,3.3))
 	ax1.scatter(xfloat,yfloat, 15)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
@@ -295,6 +301,12 @@ def quadratic_model(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
 	
 	x_label = pydom["input#xlabel"][0].value
 	y_label = pydom["input#ylabel"][0].value
@@ -381,7 +393,7 @@ def quadratic_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(5,3))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.3,3.3))
 	ax1.scatter(xfloat,yfloat, 15)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
@@ -427,6 +439,12 @@ def inverse_model(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
 	
 	x_label = pydom["input#xlabel"][0].value
 	y_label = pydom["input#ylabel"][0].value
@@ -502,7 +520,7 @@ def inverse_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c0float/x_model
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(5,3))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.3,3.3))
 	ax1.scatter(xfloat,yfloat, 15)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
@@ -548,6 +566,12 @@ def sqrt_model(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
 
 	x_label = pydom["input#xlabel"][0].value
 	y_label = pydom["input#ylabel"][0].value
@@ -630,7 +654,7 @@ def sqrt_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*np.sqrt(x_model) + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(5,3))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.3,3.3))
 	ax1.scatter(xfloat,yfloat, 15)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
@@ -676,6 +700,12 @@ def power_model(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
 	
 	x_label = pydom["input#xlabel"][0].value
 	y_label = pydom["input#ylabel"][0].value
@@ -763,7 +793,7 @@ def power_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c0float*x_model**power_n_float + power_b_float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(5,3))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.3,3.3))
 	ax1.scatter(xfloat,yfloat, 15)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
@@ -771,8 +801,8 @@ def power_model(event):
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=4)
-	ax1.tick_params(axis='y', labelsize=4)
+	ax1.tick_params(axis='x', labelsize=7)
+	ax1.tick_params(axis='y', labelsize=7)
 	ax1.margins(1)
 	ax1.grid(linewidth=0.4)
 
