@@ -59,7 +59,19 @@
 		border-style: solid;
 		border-color: black;
 		border-width: thin;
-	}
+		}
+
+	.col-25 {
+		float: left;
+		width: 25%;
+		margin-top: 6px;
+		}
+
+	.col-75 {
+		float: left;
+		width: 75%;
+		margin-top: 6px;
+		}
 </style>
 
 <body>
@@ -270,14 +282,30 @@
 	</div>
 	<div class="graph-settings">
 		<h2 style="font-size: 16px"><center>Graph Settings</center></h2>
-		<div>
-			<label for="xlabel">x-label:</label>
-			<input type="text" id="xlabel" size=6/>
+		<div class="col-25">
+			<label for="xlabel">x-variable:</label>
 		</div>
-		<div>
-			<label for="ylabel">y-label:</label>
-			<input type="text" id="ylabel" size=6/>
+		<div class="col-75">
+			<input type="text" id="xlabel" name="xlabel" placeholder="x variable name" size=6/>
 		</div>
+		<div class="col-25">
+			<label for="ylabel">y-variable:</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="ylabel" name="ylabel" placeholder="y variable name" size=6/>
+		</div>
+
+		<!-- old code
+			<div>
+				<label for="xlabel">x-label:</label>
+				<input type="text" id="xlabel" size=6/>
+			</div>
+			<div>
+				<label for="ylabel">y-label:</label>
+				<input type="text" id="ylabel" size=6/>
+			</div>
+		 -->
+		
 		<table style="width:100%" padding: 10px;>
 			<tr>
 				<td style="width:10%" align ="right"><label for="xmin">xmin:</label></td>
