@@ -263,26 +263,30 @@
 		<center><strong>Graph Settings</strong></center>
 		<table style="width:60%" padding: 5px;>
 			<tr>
-				<td style="width:30%" align ="right"><label for="xlabel">x-label</label></td>
+				<td style="width:30%" align ="right"><label for="xlabel">x-label:</label></td>
 				<td style="width:70%" align ="left"><input type="text" id="xlabel" size=6/>
 			</tr>
 			<tr>
-				<td style="width:30%" align ="right"><label for="ylabel">y-label</label></td>
+				<td style="width:30%" align ="right"><label for="ylabel">y-label:</label></td>
 				<td style="width:70%" align ="left"><input type="text" id="ylabel" size=6/>
 			</tr>
 		</table>
 		<table style="width:100%" padding: 5px;>
 			<tr>
-				<td style="width:10%" align ="right"><label for="xmin">xmin</label></td>
+				<td style="width:10%" align ="right"><label for="xmin">xmin:</label></td>
 				<td style="width:40%" align ="left"><input type="text" id="xmin" size=6/>
-				<td style="width:10%" align ="right"><label for="y1">xmax</label></td>
+				<td style="width:10%" align ="right"><label for="y1">xmax:</label></td>
 				<td style="width:40%" align ="left"><input type="text" id="xmax" size=6/>
 			</tr>
 			<tr>
-				<td style="width:10%" align ="right"><label for="ymin">ymin</label></td>
+				<td style="width:10%" align ="right"><label for="ymin">ymin:</label></td>
 				<td style="width:40%" align ="left"><input type="text" id="ymin" size=6/>
-				<td style="width:10%" align ="right"><label for="ymax">ymax</label></td>
+				<td style="width:10%" align ="right"><label for="ymax">ymax:</label></td>
 				<td style="width:40%" align ="left"><input type="text" id="ymax" size=6/>
+			</tr>
+			<tr>
+				<td style="width:10%" align ="right"><label for="graph_scale">Graph scale multiplier:</label></td>
+				<td style="width:40%" align ="left"><input type="text" id="graph_scale" size=6/>
 			</tr>
 		</table>
 		<button id="submit-button" type="submit" py-click="update_graph">Update graph settings</button>
