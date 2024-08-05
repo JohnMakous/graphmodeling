@@ -58,15 +58,15 @@
 		border-width: thin;
 		}
 
-	.col-20 {
+	.col-25 {
 		float: left;
-		width: 20%;
+		width: 25%;
 		margin-top: 6px;
 		}
 
-	.col-80 {
+	.col-75 {
 		float: left;
-		width: 80%;
+		width: 75%;
 		margin-top: 6px;
 		}
 </style>
@@ -279,30 +279,19 @@
 	</div>
 	<div class="graph-settings">
 		<h2 style="font-size: 16px"><center>Graph Settings</center></h2>
-		<div class="col-20">
+		<div class="col-25">
 			<label for="xlabel"> x-variable:</label>
 		</div>
-		<div class="col-80">
-			<input type="text" id="xlabel" name="xlabel" size="25" size=5/>
+		<div class="col-75">
+			<input type="text" id="xlabel" name="xlabel" size="16" size=6/>
 		</div>
-		<div class="col-20">
+		<div class="col-25">
 			<label for="ylabel"> y-variable:</label>
 		</div>
-		<div class="col-80">
-			<input type="text" id="ylabel" name="ylabel" size="25" size=5/>
+		<div class="col-75">
+			<input type="text" id="ylabel" name="ylabel" size="16" size=6/>
 		</div>
-
-		<!-- old code
-			<div>
-				<label for="xlabel">x-label:</label>
-				<input type="text" id="xlabel" size=6/>
-			</div>
-			<div>
-				<label for="ylabel">y-label:</label>
-				<input type="text" id="ylabel" size=6/>
-				<br>
-			</div>
-		 -->
+		<div><br></div>
 		
 		<table style="width:100%" padding: 20px;>
 			<tr>
@@ -320,8 +309,8 @@
 		</table>
 		<table style="width:100%" padding: 10px;>
 			<tr>
-				<td style="width:70%" align ="right"><label for="graphscale">Graph size multiplier:</label></td>
-				<td <td rowspan="2" style="width:30%" align ="left"><input type="text" id="graphscale" size=6/>
+				<td style="width:50%"><label for="graphscale">Graph size multiplier:</label></td>
+				<td <td rowspan="2" style="width:50%" align ="left"><input type="text" id="graphscale" size="5" size=6/>
 			</tr>
 			<tr>
 				<td align ="right">(1.0 - 1.5)</td>
