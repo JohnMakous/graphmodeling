@@ -307,15 +307,14 @@
 				<td style="width:40%" align ="left"><input type="text" id="ymax" size=6/>
 			</tr>
 		</table>
-		<table style="width:100%" padding: 10px;>
-			<tr>
-				<td style="width:50%"><label for="graphscale">Graph size multiplier:</label></td>
-				<td <td rowspan="2" style="width:50%" align ="left"><input type="text" id="graphscale" size="5" size=6/>
-			</tr>
-			<tr>
-				<td align ="right">(1.0 - 1.5)</td>
-			</tr>
-		</table>
+		
+		<div class="col-75">
+			<label for="graphscale">Graph size multiplier (1.0 - 1.5):</label>
+		</div>
+		<div class="col-25">
+			<input type="text" id="graphscale" size="5" size=6/>
+		</div>	
+	
 		<button id="submit-button" type="submit" py-click="update_graph">Update graph settings</button>
 	</div>
 </div>
