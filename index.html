@@ -288,8 +288,11 @@
 		</table>
 		<table style="width:100%" padding: 5px;>
 			<tr>
-				<td style="width:70%" align ="right"><label for="graphscale">Graph scale multiplier (1.0-1.5):</label></td>
-				<td style="width:30%" align ="left"><input type="text" id="graphscale" size=6/>
+				<td style="width:70%" align ="right"><label for="graphscale">Graph scale multiplier:</label></td>
+				<td <td rowspan="2" style="width:30%" align ="left"><input type="text" id="graphscale" size=6/>
+			</tr>
+			<tr>
+				<td align ="right">(1.0 - 1.5)</td>
 			</tr>
 		</table>
 		<button id="submit-button" type="submit" py-click="update_graph">Update graph settings</button>
