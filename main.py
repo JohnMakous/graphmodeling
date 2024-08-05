@@ -49,6 +49,12 @@ def update_graph(event):
 		y_label = pydom["input#ylabel"][0].value
 	else:
 		y_label = "y"
+
+	if pydom["input#graphscale"][0].value != "":
+		y_max = pydom["input#graphscale"][0].value
+		graph_scale= float(graphscale)
+	else:
+		graph_scale = 1.0
 	
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
@@ -114,7 +120,7 @@ def update_graph(event):
 	#xfloat = x		# [float(i) for i in x]
 	#yfloat = y		# [float(i) for i in y]
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3.3,3.3))
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.3,3.3))
 	ax1.scatter(xfloat,yfloat, 15)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
