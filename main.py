@@ -302,6 +302,16 @@ def quadratic_model(event):
 	else:
 		y_max = 10
 
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+
 	if pydom["input#graphscale"][0].value != "":
 		graph_scale = pydom["input#graphscale"][0].value
 		graph_scale= float(graph_scale)
@@ -440,6 +450,16 @@ def inverse_model(event):
 	else:
 		y_max = 10
 
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+
 	if pydom["input#graphscale"][0].value != "":
 		graph_scale = pydom["input#graphscale"][0].value
 		graph_scale= float(graph_scale)
@@ -567,6 +587,16 @@ def sqrt_model(event):
 	else:
 		y_max = 10
 
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+	
 	if pydom["input#graphscale"][0].value != "":
 		graph_scale = pydom["input#graphscale"][0].value
 		graph_scale= float(graph_scale)
@@ -701,6 +731,16 @@ def power_model(event):
 	else:
 		y_max = 10
 
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+	
 	if pydom["input#graphscale"][0].value != "":
 		graph_scale = pydom["input#graphscale"][0].value
 		graph_scale= float(graph_scale)
