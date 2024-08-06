@@ -257,7 +257,7 @@ def linear_model(event):
 	y_model = c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
-	ax1.scatter(xfloat,yfloat, 15, color = 'black')
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
@@ -267,7 +267,7 @@ def linear_model(event):
 	ax1.tick_params(axis='x', labelsize=6)
 	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid(linewidth=0.4)
+	ax1.grid(linewidth=0.4, zorder=1)
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x + %.2f$' % (c1float, c0float)
 	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
@@ -402,7 +402,7 @@ def quadratic_model(event):
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
-	ax1.scatter(xfloat,yfloat, 15, color = 'black')
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
@@ -412,7 +412,7 @@ def quadratic_model(event):
 	ax1.tick_params(axis='x', labelsize=6)
 	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid(linewidth=0.4)
+	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x^{2} + %.2f x + %.2f$' % (c2float, c1float, c0float)
@@ -537,7 +537,7 @@ def inverse_model(event):
 	y_model = c0float/x_model
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
-	ax1.scatter(xfloat,yfloat, 15, color = 'black')
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
@@ -547,7 +547,7 @@ def inverse_model(event):
 	ax1.tick_params(axis='x', labelsize=6)
 	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid(linewidth=0.4)
+	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = \frac{%.2f}{x} $' % (c0float)
@@ -679,7 +679,7 @@ def sqrt_model(event):
 	y_model = c1float*np.sqrt(x_model) + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
-	ax1.scatter(xfloat,yfloat, 15, color = 'black')
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
@@ -689,7 +689,7 @@ def sqrt_model(event):
 	ax1.tick_params(axis='x', labelsize=6)
 	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid(linewidth=0.4)
+	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f \sqrt{x} + %.2f$' % (c1float, c0float)
@@ -825,7 +825,7 @@ def power_model(event):
 	y_model = c0float*x_model**power_n_float + power_b_float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
-	ax1.scatter(xfloat,yfloat, 15, color = 'black')
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
@@ -835,7 +835,7 @@ def power_model(event):
 	ax1.tick_params(axis='x', labelsize=6)
 	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid(linewidth=0.4)
+	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x^{%.2f} + %.2f$' % (c0float, power_n_float, power_b_float)
