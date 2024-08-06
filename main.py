@@ -130,7 +130,7 @@ def update_graph(event):
 	ax1.tick_params(axis='x', labelsize=6)
 	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid(linewidth=0.4)
+	ax1.grid(linewidth=0.4, zorder=0)
 
 	plt.close('all')
 	
