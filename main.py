@@ -121,7 +121,7 @@ def update_graph(event):
 	#yfloat = y		# [float(i) for i in y]
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
-	ax1.scatter(xfloat,yfloat, 15, color = 'black')
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', , zorder=1)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
@@ -130,7 +130,7 @@ def update_graph(event):
 	ax1.tick_params(axis='x', labelsize=6)
 	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid(linewidth=0.4, zorder=0)
+	ax1.grid(linewidth=0.4, zorder=2)
 
 	plt.close('all')
 	
