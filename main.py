@@ -58,7 +58,7 @@ def update_graph(event):
 	if pydom["input#graphnote"][0].value != "":
 		graph_note = pydom["input#graphnote"][0].value
 	else:
-		graph_note = ""
+		graph_note = "note"
 
 	if pydom["input#graphscale"][0].value != "":
 		graph_scale = pydom["input#graphscale"][0].value
