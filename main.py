@@ -28,6 +28,11 @@ def update_graph(event):
 	else:
 		x_max = 10
 
+	if pydom["input#xunits"][0].value != "":
+		x_units = pydom["input#xunits"][0].value
+	else:
+		x_units = ""
+
 	if pydom["input#ymin"][0].value != "":
 		y_min = pydom["input#ymin"][0].value
 		y_min = float(y_min)
@@ -49,6 +54,12 @@ def update_graph(event):
 		y_label = pydom["input#ylabel"][0].value
 	else:
 		y_label = "y"
+
+	if pydom["input#graphnote"][0].value != "":
+		graph_note = pydom["input#graphnote"][0].value
+	else:
+		graph_note = ""
+
 
 	if pydom["input#graphscale"][0].value != "":
 		graph_scale = pydom["input#graphscale"][0].value
