@@ -28,11 +28,6 @@ def update_graph(event):
 	else:
 		x_max = 10
 
-	if pydom["input#xunits"][0].value != "":
-		x_units = pydom["input#xunits"][0].value
-	else:
-		x_units = ""
-
 	if pydom["input#ymin"][0].value != "":
 		y_min = pydom["input#ymin"][0].value
 		y_min = float(y_min)
