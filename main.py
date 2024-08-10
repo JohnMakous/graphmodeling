@@ -132,7 +132,7 @@ def update_graph(event):
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
 	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
-	fig.suptitle(graph_note, fontsize=6)
+	#fig.suptitle(graph_note, fontsize=6)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
