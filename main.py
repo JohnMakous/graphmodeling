@@ -124,8 +124,6 @@ def update_graph(event):
 	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	# fig.suptitle(graph_note, fontsize=6)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
-	#if pydom["button#update-button"][0].id != "update-button":
-	#	plt.title("Hello", fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
@@ -273,9 +271,10 @@ def linear_model(event):
 	ax1.grid(linewidth=0.4, zorder=1)
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x + %.2f$' % (c1float, c0float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	fig.suptitle(textstr1, fontsize=6)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+    #     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
