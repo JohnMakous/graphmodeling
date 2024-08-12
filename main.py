@@ -124,8 +124,8 @@ def update_graph(event):
 	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	# fig.suptitle(graph_note, fontsize=6)
 	plt.title(y_label + " vs. "+ x_label, fontsize=8)
-	if pydom["button#update-button"][0].id != "update-button":
-		plt.title("Hello", fontsize=8)
+	#if pydom["button#update-button"][0].id != "update-button":
+	#	plt.title("Hello", fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
