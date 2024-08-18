@@ -271,10 +271,10 @@ def linear_model(event):
 	ax1.grid(linewidth=0.4, zorder=1)
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Math Model: y = %.2f x + %.2f$' % (c1float, c0float)
-	fig1.suptitle(textstr1, fontsize=6)
+	fig1.suptitle(textstr1, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-    #     	verticalalignment='top', bbox=props)
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -418,9 +418,10 @@ def quadratic_model(event):
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x^{2} + %.2f x + %.2f$' % (c2float, c1float, c0float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	fig1.suptitle(textstr1, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -552,10 +553,10 @@ def inverse_model(event):
 	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Model: y = \frac{%.2f}{x} $' % (c0float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	fig1.suptitle(textstr1, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -695,9 +696,10 @@ def sqrt_model(event):
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f \sqrt{x} + %.2f$' % (c1float, c0float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	fig1.suptitle(textstr1, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -841,9 +843,10 @@ def power_model(event):
 
 	# place a text box in upper middle in axes coords
 	textstr1 = r'$Model: y = %.2f x^{%.2f} + %.2f$' % (c0float, power_n_float, power_b_float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	fig1.suptitle(textstr1, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
