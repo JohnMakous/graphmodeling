@@ -417,7 +417,7 @@ def quadratic_model(event):
 	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Math Model: y = %.2f x^{2} + %.2f x + %.2f$' % (c2float, c1float, c0float)
+	textstr1 = "Math Model: " +r'$y = %.2f x^{2} + %.2f x + %.2f$' % (c2float, c1float, c0float)
 	fig1.suptitle(textstr1, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
@@ -553,7 +553,7 @@ def inverse_model(event):
 	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Math  Model: y = %.2f/x' % (c0float)
+	textstr1 = "Math Model: " +r'$y = %.2f/x' % (c0float)
 	fig1.suptitle(textstr1, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
@@ -696,7 +696,7 @@ def sqrt_model(event):
 	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Math  Model: y = %.2f \sqrt{x} + %.2f$' % (c1float, c0float)
+	textstr1 = "Math Model: " +r'$y = %.2f \sqrt{x} + %.2f$' % (c1float, c0float)
 	fig1.suptitle(textstr1, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
@@ -843,7 +843,7 @@ def power_model(event):
 	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Math  Model: y = %.2f x^{%.2f} + %.2f$' % (c0float, power_n_float, power_b_float)
+	textstr1 = "Math Model: " +r'$y = %.2f x^{%.2f} + %.2f$' % (c0float, power_n_float, power_b_float)
 	fig1.suptitle(textstr1, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
