@@ -132,6 +132,7 @@ def update_graph(event):
 	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
 	ax1.grid(linewidth=0.4, zorder=1)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
 
 	plt.close('all')
 	
@@ -406,7 +407,6 @@ def quadratic_model(event):
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
 	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
-	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
@@ -418,7 +418,8 @@ def quadratic_model(event):
 
 	# place a text box in upper middle in axes coords
 	textstr1 = "Math Model: " +r'$y = %.2f x^{2} + %.2f x + %.2f$' % (c2float, c1float, c0float)
-	fig1.suptitle(textstr1, fontsize=8)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
 	#     	verticalalignment='top', bbox=props)
@@ -542,7 +543,6 @@ def inverse_model(event):
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
 	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
-	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
@@ -554,7 +554,8 @@ def inverse_model(event):
 
 	# place a text box in upper middle in axes coords
 	textstr1 = "Math Model: " +r'$y = %.2f/x $' % (c0float)
-	fig1.suptitle(textstr1, fontsize=8)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
 	#     	verticalalignment='top', bbox=props)
@@ -685,7 +686,6 @@ def sqrt_model(event):
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
 	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
-	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
@@ -697,7 +697,8 @@ def sqrt_model(event):
 
 	# place a text box in upper middle in axes coords
 	textstr1 = "Math Model: " +r'$y = %.2f \sqrt{x} + %.2f$' % (c1float, c0float)
-	fig1.suptitle(textstr1, fontsize=8)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
 	#     	verticalalignment='top', bbox=props)
@@ -832,7 +833,6 @@ def power_model(event):
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
 	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
 	plt.plot(x_model, y_model, linewidth=1.0)
-	plt.title(y_label + " vs. "+ x_label, fontsize=8)
 	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
 	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
@@ -844,7 +844,8 @@ def power_model(event):
 
 	# place a text box in upper middle in axes coords
 	textstr1 = "Math Model: " +r'$y = %.2f x^{%.2f} + %.2f$' % (c0float, power_n_float, power_b_float)
-	fig1.suptitle(textstr1, fontsize=8)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
 	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
 	#     	verticalalignment='top', bbox=props)
