@@ -302,6 +302,21 @@
 		</div>	
 	
 		<button id="submit-button" type="submit" py-click="update_graph">Update graph settings</button>
+		
+		<h2 style="font-size: 16px"><center>More Models to Fit Data</center></h2>
+
+		<!-- Inverse Square Model -->
+	   <table style="width:100%">
+          <tr>
+				<td  colspan="2">Inverse Square: y = c/x<sup>2</sup></td>
+		  </tr>
+		  <tr>
+			    <td style="width:20%" align ="right"><label for="invsqc">c</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="invsqc" placeholder="0" size=10/></td>
+		  </tr>
+		</table>
+	  	<button id="submit-button" type="submit" py-click="inversesquare_model">Try fit</button>
+        <div><br></div>	
 	</div>
 </div>
 	
