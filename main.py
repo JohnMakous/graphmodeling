@@ -40,8 +40,21 @@ def update_graph(event):
 	else:
 		y_max = 10
 
-	x_label = pydom["input#xlabel"][0].value
-	y_label = pydom["input#ylabel"][0].value
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
 	
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
@@ -58,6 +71,11 @@ def update_graph(event):
 	x13 = pydom["input#x13"][0].value
 	x14 = pydom["input#x14"][0].value
 	x15 = pydom["input#x15"][0].value
+	x16 = pydom["input#x16"][0].value
+	x17 = pydom["input#x17"][0].value
+	x18 = pydom["input#x18"][0].value
+	x19 = pydom["input#x19"][0].value
+	x20 = pydom["input#x20"][0].value
 
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
@@ -74,9 +92,14 @@ def update_graph(event):
 	y13 = pydom["input#y13"][0].value
 	y14 = pydom["input#y14"][0].value
 	y15 = pydom["input#y15"][0].value
+	y16 = pydom["input#y16"][0].value
+	y17 = pydom["input#y17"][0].value
+	y18 = pydom["input#y18"][0].value
+	y19 = pydom["input#y19"][0].value
+	y20 = pydom["input#y20"][0].value
 
-	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15]
-	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15]
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20]
 	
 	# Identify x input elements from data table that are numeric; store in an array
 	x_list=[]
@@ -107,19 +130,18 @@ def update_graph(event):
 	#xfloat = x		# [float(i) for i in x]
 	#yfloat = y		# [float(i) for i in y]
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
-	ax1.scatter(xfloat,yfloat, 10)
-	plt.title(y_label + " vs. "+ x_label, fontsize=6)
-	#plt.xlabel(x_label, fontsize=6)  
-	#plt.ylabel(y_label, fontsize=6)
-	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
-	ax1.set_ylabel(y_label, fontsize=6, labelpad=1)
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
+	# fig.suptitle(graph_note, fontsize=6)
+	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=4)
-	ax1.tick_params(axis='y', labelsize=4)
+	ax1.tick_params(axis='x', labelsize=6)
+	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4, zorder=1)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
 
 	plt.close('all')
 	
@@ -150,8 +172,22 @@ def linear_model(event):
 	else:
 		y_max = 10
 
-	x_label = pydom["input#xlabel"][0].value
-	y_label = pydom["input#ylabel"][0].value
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
+	
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
@@ -167,6 +203,11 @@ def linear_model(event):
 	x13 = pydom["input#x13"][0].value
 	x14 = pydom["input#x14"][0].value
 	x15 = pydom["input#x15"][0].value
+	x16 = pydom["input#x16"][0].value
+	x17 = pydom["input#x17"][0].value
+	x18 = pydom["input#x18"][0].value
+	x19 = pydom["input#x19"][0].value
+	x20 = pydom["input#x20"][0].value
 
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
@@ -183,9 +224,14 @@ def linear_model(event):
 	y13 = pydom["input#y13"][0].value
 	y14 = pydom["input#y14"][0].value
 	y15 = pydom["input#y15"][0].value
+	y16 = pydom["input#y16"][0].value
+	y17 = pydom["input#y17"][0].value
+	y18 = pydom["input#y18"][0].value
+	y19 = pydom["input#y19"][0].value
+	y20 = pydom["input#y20"][0].value
 
-	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15]
-	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15]
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20]
 	
 	# Identify x input elements from data table that are numeric; store in an array
 	x_list=[]
@@ -231,23 +277,24 @@ def linear_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*x_model + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
-	ax1.scatter(xfloat,yfloat, 10)
-	plt.plot(x_model, y_model)
-	plt.title(y_label + " vs. "+ x_label, fontsize=6)
-	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
-	ax1.set_ylabel(y_label, fontsize=6, labelpad=1)
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
+	plt.plot(x_model, y_model, linewidth=1.0)
+	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=4)
-	ax1.tick_params(axis='y', labelsize=4)
+	ax1.tick_params(axis='x', labelsize=6)
+	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4, zorder=1)
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Model: y = %.2f x + %.2f$' % (c1float, c0float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	textstr1 = "Math Model: " + r'$y = %.3f x + %.3f$' % (c1float, c0float)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -276,9 +323,23 @@ def quadratic_model(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
+
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
 	
-	x_label = pydom["input#xlabel"][0].value
-	y_label = pydom["input#ylabel"][0].value
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
@@ -294,6 +355,11 @@ def quadratic_model(event):
 	x13 = pydom["input#x13"][0].value
 	x14 = pydom["input#x14"][0].value
 	x15 = pydom["input#x15"][0].value
+	x16 = pydom["input#x16"][0].value
+	x17 = pydom["input#x17"][0].value
+	x18 = pydom["input#x18"][0].value
+	x19 = pydom["input#x19"][0].value
+	x20 = pydom["input#x20"][0].value
 
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
@@ -310,9 +376,14 @@ def quadratic_model(event):
 	y13 = pydom["input#y13"][0].value
 	y14 = pydom["input#y14"][0].value
 	y15 = pydom["input#y15"][0].value
+	y16 = pydom["input#y16"][0].value
+	y17 = pydom["input#y17"][0].value
+	y18 = pydom["input#y18"][0].value
+	y19 = pydom["input#y19"][0].value
+	y20 = pydom["input#y20"][0].value
 
-	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15]
-	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15]
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20]
 	
 	# Identify x input elements from data table that are numeric; store in an array
 	x_list=[]
@@ -362,24 +433,25 @@ def quadratic_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
-	ax1.scatter(xfloat,yfloat, 10)
-	plt.plot(x_model, y_model)
-	plt.title(y_label + " vs. "+ x_label, fontsize=6)
-	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
-	ax1.set_ylabel(y_label, fontsize=6, labelpad=1)
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
+	plt.plot(x_model, y_model, linewidth=1.0)
+	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=4)
-	ax1.tick_params(axis='y', labelsize=4)
+	ax1.tick_params(axis='x', labelsize=6)
+	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Model: y = %.2f x^{2} + %.2f x + %.2f$' % (c2float, c1float, c0float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	textstr1 = "Math Model: " +r'$y = %.3f x^{2} + %.3f x + %.3f$' % (c2float, c1float, c0float)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -408,9 +480,23 @@ def inverse_model(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
+
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
 	
-	x_label = pydom["input#xlabel"][0].value
-	y_label = pydom["input#ylabel"][0].value
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
@@ -426,6 +512,11 @@ def inverse_model(event):
 	x13 = pydom["input#x13"][0].value
 	x14 = pydom["input#x14"][0].value
 	x15 = pydom["input#x15"][0].value
+	x16 = pydom["input#x16"][0].value
+	x17 = pydom["input#x17"][0].value
+	x18 = pydom["input#x18"][0].value
+	x19 = pydom["input#x19"][0].value
+	x20 = pydom["input#x20"][0].value
 
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
@@ -442,9 +533,14 @@ def inverse_model(event):
 	y13 = pydom["input#y13"][0].value
 	y14 = pydom["input#y14"][0].value
 	y15 = pydom["input#y15"][0].value
+	y16 = pydom["input#y16"][0].value
+	y17 = pydom["input#y17"][0].value
+	y18 = pydom["input#y18"][0].value
+	y19 = pydom["input#y19"][0].value
+	y20 = pydom["input#y20"][0].value
 
-	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15]
-	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15]
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20]
 	
 	# Identify x input elements from data table that are numeric; store in an array
 	x_list=[]
@@ -483,24 +579,25 @@ def inverse_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c0float/x_model
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
-	ax1.scatter(xfloat,yfloat, 10)
-	plt.plot(x_model, y_model)
-	plt.title(y_label + " vs. "+ x_label, fontsize=6)
-	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
-	ax1.set_ylabel(y_label, fontsize=6, labelpad=1)
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
+	plt.plot(x_model, y_model, linewidth=1.0)
+	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=4)
-	ax1.tick_params(axis='y', labelsize=4)
+	ax1.tick_params(axis='x', labelsize=6)
+	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Model: y = \frac{%.2f}{x} $' % (c0float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	textstr1 = "Math Model: " +r'$y = %.3f/x $' % (c0float)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -530,8 +627,22 @@ def sqrt_model(event):
 	else:
 		y_max = 10
 
-	x_label = pydom["input#xlabel"][0].value
-	y_label = pydom["input#ylabel"][0].value
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+	
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
+
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
@@ -547,6 +658,11 @@ def sqrt_model(event):
 	x13 = pydom["input#x13"][0].value
 	x14 = pydom["input#x14"][0].value
 	x15 = pydom["input#x15"][0].value
+	x16 = pydom["input#x16"][0].value
+	x17 = pydom["input#x17"][0].value
+	x18 = pydom["input#x18"][0].value
+	x19 = pydom["input#x19"][0].value
+	x20 = pydom["input#x20"][0].value
 
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
@@ -563,9 +679,14 @@ def sqrt_model(event):
 	y13 = pydom["input#y13"][0].value
 	y14 = pydom["input#y14"][0].value
 	y15 = pydom["input#y15"][0].value
+	y16 = pydom["input#y16"][0].value
+	y17 = pydom["input#y17"][0].value
+	y18 = pydom["input#y18"][0].value
+	y19 = pydom["input#y19"][0].value
+	y20 = pydom["input#y20"][0].value
 
-	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15]
-	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15]
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20]
 	
 	# Identify x input elements from data table that are numeric; store in an array
 	x_list=[]
@@ -611,24 +732,25 @@ def sqrt_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c1float*np.sqrt(x_model) + c0float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
-	ax1.scatter(xfloat,yfloat, 10)
-	plt.plot(x_model, y_model)
-	plt.title(y_label + " vs. "+ x_label, fontsize=6)
-	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
-	ax1.set_ylabel(y_label, fontsize=6, labelpad=1)
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
+	plt.plot(x_model, y_model, linewidth=1.0)
+	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=4)
-	ax1.tick_params(axis='y', labelsize=4)
+	ax1.tick_params(axis='x', labelsize=6)
+	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Model: y = %.2f \sqrt{x} + %.2f$' % (c1float, c0float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	textstr1 = "Math Model: " +r'$y = %.3f \sqrt{x} + %.3f$' % (c1float, c0float)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)
@@ -657,10 +779,23 @@ def power_model(event):
 		y_max= float(y_max)
 	else:
 		y_max = 10
-	
-	x_label = pydom["input#xlabel"][0].value
-	y_label = pydom["input#ylabel"][0].value
 
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+	
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
+	
 	x1 = pydom["input#x1"][0].value
 	x2 = pydom["input#x2"][0].value
 	x3 = pydom["input#x3"][0].value
@@ -676,6 +811,11 @@ def power_model(event):
 	x13 = pydom["input#x13"][0].value
 	x14 = pydom["input#x14"][0].value
 	x15 = pydom["input#x15"][0].value
+	x16 = pydom["input#x16"][0].value
+	x17 = pydom["input#x17"][0].value
+	x18 = pydom["input#x18"][0].value
+	x19 = pydom["input#x19"][0].value
+	x20 = pydom["input#x20"][0].value
 
 	y1 = pydom["input#y1"][0].value
 	y2 = pydom["input#y2"][0].value
@@ -692,9 +832,14 @@ def power_model(event):
 	y13 = pydom["input#y13"][0].value
 	y14 = pydom["input#y14"][0].value
 	y15 = pydom["input#y15"][0].value
+	y16 = pydom["input#y16"][0].value
+	y17 = pydom["input#y17"][0].value
+	y18 = pydom["input#y18"][0].value
+	y19 = pydom["input#y19"][0].value
+	y20 = pydom["input#y20"][0].value
 
-	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15]
-	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15]
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20]
 	
 	# Identify x input elements from data table that are numeric; store in an array
 	x_list=[]
@@ -744,24 +889,171 @@ def power_model(event):
 	x_model = np.arange(0.0,x_max,.001)
 	y_model = c0float*x_model**power_n_float + power_b_float
 
-	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(3,2.5))
-	ax1.scatter(xfloat,yfloat, 10)
-	plt.plot(x_model, y_model)
-	plt.title(y_label + " vs. "+ x_label, fontsize=6)
-	ax1.set_xlabel(x_label, fontsize=6, labelpad=1)
-	ax1.set_ylabel(y_label, fontsize=6, labelpad=1)
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
+	plt.plot(x_model, y_model, linewidth=1.0)
+	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
 	ax1.set_xlim(x_min, x_max)
 	ax1.set_ylim(y_min, y_max)
-	ax1.tick_params(axis='x', labelsize=4)
-	ax1.tick_params(axis='y', labelsize=4)
+	ax1.tick_params(axis='x', labelsize=6)
+	ax1.tick_params(axis='y', labelsize=6)
 	ax1.margins(1)
-	ax1.grid()
+	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = r'$Model: y = %.2f x^{%.2f} + %.2f$' % (c0float, power_n_float, power_b_float)
-	props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
-	ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
-        	verticalalignment='top', bbox=props)
+	textstr1 = "Math Model: " +r'$y = %.3f x^{%.3f} + %.3f$' % (c0float, power_n_float, power_b_float)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
+
+	plt.close('all')
+	display(fig1, target='graph', append=False)
+
+def inversesquare_model(event):
+	if pydom["input#xmin"][0].value != "":
+		x_min = pydom["input#xmin"][0].value
+		x_min = float(x_min)
+	else:
+		x_min = 0
+	
+	if pydom["input#xmax"][0].value != "":
+		x_max = pydom["input#xmax"][0].value
+		x_max = float(x_max)
+	else:
+		x_max = 10
+
+	if pydom["input#ymin"][0].value != "":
+		y_min = pydom["input#ymin"][0].value
+		y_min = float(y_min)
+	else:
+		y_min = 0
+	
+	if pydom["input#ymax"][0].value != "":
+		y_max = pydom["input#ymax"][0].value
+		y_max= float(y_max)
+	else:
+		y_max = 10
+
+	if pydom["input#xlabel"][0].value != "":
+		x_label = pydom["input#xlabel"][0].value
+	else:
+		x_label = "x"
+
+	if pydom["input#ylabel"][0].value != "":
+		y_label = pydom["input#ylabel"][0].value
+	else:
+		y_label = "y"
+
+	if pydom["input#graphscale"][0].value != "":
+		graph_scale = pydom["input#graphscale"][0].value
+		graph_scale= float(graph_scale)
+	else:
+		graph_scale = 1.0
+	
+	x1 = pydom["input#x1"][0].value
+	x2 = pydom["input#x2"][0].value
+	x3 = pydom["input#x3"][0].value
+	x4 = pydom["input#x4"][0].value
+	x5 = pydom["input#x5"][0].value
+	x6 = pydom["input#x6"][0].value
+	x7 = pydom["input#x7"][0].value
+	x8 = pydom["input#x8"][0].value
+	x9 = pydom["input#x9"][0].value
+	x10 = pydom["input#x10"][0].value
+	x11 = pydom["input#x11"][0].value
+	x12 = pydom["input#x12"][0].value
+	x13 = pydom["input#x13"][0].value
+	x14 = pydom["input#x14"][0].value
+	x15 = pydom["input#x15"][0].value
+	x16 = pydom["input#x16"][0].value
+	x17 = pydom["input#x17"][0].value
+	x18 = pydom["input#x18"][0].value
+	x19 = pydom["input#x19"][0].value
+	x20 = pydom["input#x20"][0].value
+
+	y1 = pydom["input#y1"][0].value
+	y2 = pydom["input#y2"][0].value
+	y3 = pydom["input#y3"][0].value
+	y4 = pydom["input#y4"][0].value
+	y5 = pydom["input#y5"][0].value
+	y6 = pydom["input#y6"][0].value
+	y7 = pydom["input#y7"][0].value
+	y8 = pydom["input#y8"][0].value
+	y9 = pydom["input#y9"][0].value
+	y10 = pydom["input#y10"][0].value
+	y11 = pydom["input#y11"][0].value
+	y12 = pydom["input#y12"][0].value
+	y13 = pydom["input#y13"][0].value
+	y14 = pydom["input#y14"][0].value
+	y15 = pydom["input#y15"][0].value
+	y16 = pydom["input#y16"][0].value
+	y17 = pydom["input#y17"][0].value
+	y18 = pydom["input#y18"][0].value
+	y19 = pydom["input#y19"][0].value
+	y20 = pydom["input#y20"][0].value
+
+	listx = [x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20]
+	listy = [y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12,y13,y14,y15,y16,y17,y18,y19,y20]
+	
+	# Identify x input elements from data table that are numeric; store in an array
+	x_list=[]
+	i=0
+	while (i<len(listx)):
+		if is_float(listx[i])== False:
+			i=i+1
+		else:
+			a = remove(listx[i])
+			x_list.append(float(a))
+			i=i+1
+
+	# Identify y input elements from data table that are numeric; store in an array
+	y_list=[]
+	i=0
+	while (i<len(listy)):
+		if is_float(listy[i])== False:
+			i=i+1
+		else:
+			a = remove(listy[i])
+			y_list.append(float(a))
+			i=i+1
+	
+	#store float values from data table into arrays
+	xfloat = np.array(x_list)
+	yfloat = np.array(y_list)
+	
+	if pydom["input#invsqc"][0].value != "":
+		c0 = pydom["input#invsqc"][0].value
+		c0 = float(c0)
+	else:
+		c0 = 0
+
+	c0float=float(c0)
+		
+	x_model = np.arange(0.0,x_max,.001)
+	y_model = c0float/(x_model*x_model)
+
+	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
+	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
+	plt.plot(x_model, y_model, linewidth=1.0)
+	ax1.set_xlabel(x_label, fontsize=8, labelpad=1)
+	ax1.set_ylabel(y_label, fontsize=8, labelpad=1)
+	ax1.set_xlim(x_min, x_max)
+	ax1.set_ylim(y_min, y_max)
+	ax1.tick_params(axis='x', labelsize=6)
+	ax1.tick_params(axis='y', labelsize=6)
+	ax1.margins(1)
+	ax1.grid(linewidth=0.4, zorder=1)
+
+	# place a text box in upper middle in axes coords
+	textstr1 = "Math Model: " +r'$y = %.3f/x^{2} $' % (c0float)
+	plt.title(textstr1, fontsize=7)
+	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
+	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
+	# ax1.text(0.1, 0.95, textstr1, transform=ax1.transAxes, fontsize=6,
+	#     	verticalalignment='top', bbox=props)
 
 	plt.close('all')
 	display(fig1, target='graph', append=False)

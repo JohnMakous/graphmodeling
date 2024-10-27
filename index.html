@@ -12,353 +12,336 @@
         <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
         <title>Graphmodeling</title>
     </head>
-<style>
-	.master-layout{
-		width: 880px;
-	}
-
-	.title{
-		margin: 1px;
-		border: 1px;
-		padding: 1px;
-		font-size: 80%;
-	}
 	
-	.data-column {
-		display: inline-block;
-		width: 100px;
-		font-size: 75%;
-		background-color: rgb(240, 248, 255);
+<style>
+	.grid-container {
+		display: grid;
+		grid-template-columns: 14% 14% 52% 20%;
+		padding: 0px;
+		border-style: solid;
+		border-color: rgba(0, 0, 255, 0.8);
+		border-width: thick;
+		}
+
+	.data-table {
+		align-items: start;
+		font-size: 90%;
+		background-color: rgba(39, 222, 245, 0.3);
 		border-style: solid;
 		border-color: black;
 		border-width: thin;
 		}
-	
-	.data-table {
-		display: inline-block;
-		vertical-align: top;
-		width: 220px;
-		border-style: solid;
-		border-color: green;
-		border-width: thin;
-		}
-
+        
 	.models-list {
-		display: inline-block;
 		vertical-align: top;
-		width: 180px;
-		font-size: 75%;
+		font-size: 90%;
+		background-color: rgba(39, 222, 245, 0.3);
 		border-style: solid;
-		border-color: blue;
+		border-color: black;
 		border-width: thin;
-		}
-	.model-element {
-		vertical-align: top;
 		}
 	
 	.graph-block {
-		display: inline-block;
-		width: 460px;
-		<!-- height: 600px; -->
-		align-items: center;
+		place-content: stretch;
+		background-color: rgba(39, 222, 245, 0.3);
+		align-items: start;
+		border-style: solid;
+		border-color: black;
+		border-width: thin;
+		}
+	
+	.graph-settings	{
+		font-size: 90%;
+		background-color: rgba(39, 222, 245, 0.3);
 		border-style: solid;
 		border-color: black;
 		border-width: thin;
 		}
 
-	.graph-display {
-		width: 100%;
-		}
-	
-	.graph-settings {
-		font-size: 75%;
+	.col-25 {
+		float: left;
+		width: 25%;
+		margin-top: 6px;
+		margin-bottom: 6px;
 		}
 
-	.blank-row {
-		display: inline-block;
-		width: 10px;
+	.col-75 {
+		float: left;
+		width: 75%;
+		margin-top: 6px;
+		margin-bottom: 6px;
 		}
-			
+
+	.col-60 {
+		float: left;
+		width: 60%;
+		margin-top: 6px;
+		margin-bottom: 6px;
+		}
+
+	.col-40 {
+		float: left;
+		width: 40%;
+		margin-top: 6px;
+		margin-bottom: 6px;
+		}
 </style>
 
 <body>
-<div class="master-layout">   
-	<div class="title">
-		<p style="text-align: center"><strong><font size="+1">Graphmodeling</font></strong><br>
-		Fill in data in the table. Plot data. Choose a model; adjust the coefficients to find a good fit.</p>
-	</div>
-	<div class="data-table">
-		<div class="data-column">
-			<div><label for="xlabel">x-label:</label>
-			    <input type="text" id="xlabel" size=9/></div>
-			<table border=1px>
-			  <tr>
-			    <td align ="center"><label for="x1">x1</label></td>
-			    <td align ="center"><input type="text" id="x1" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x2">x2</label></td>
-			    <td align ="center"><input type="text" id="x2" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x3">x3</label></td>
-			    <td align ="center"><input type="text" id="x3" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x4">x4</label></td>
-			    <td align ="center"><input type="text" id="x4" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x5">x5</label></td>
-			    <td align ="center"><input type="text" id="x5" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x6">x6</label></td>
-			    <td align ="center"><input type="text" id="x6" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x7">x7</label></td>
-			    <td align ="center"><input type="text" id="x7" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x8">x8</label></td>
-			    <td align ="center"><input type="text" id="x8" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x9">x9</label></td>
-			    <td align ="center"><input type="text" id="x9" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x10">x10</label></td>
-			    <td align ="center"><input type="text" id="x10" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x11">x11</label></td>
-			    <td align ="center"><input type="text" id="x11" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x12">x12</label></td>
-			    <td align ="center"><input type="text" id="x12" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x13">x13</label></td>
-			    <td align ="center"><input type="text" id="x13" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x14">x14</label></td>
-			    <td align ="center"><input type="text" id="x14" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="center"><label for="x15">x15</label></td>
-			    <td align ="center"><input type="text" id="x15" size=6/></td>
-			  </tr>
-			</table>
-		</div>
+<h3 style="font-size: 20px"><center>Graphmodeling</center></h3>
+<p>Fill in data in the table. Plot data. Choose a model; adjust the coefficients to find a good fit.</p>
 	
-		<div class="data-column">
-			<div><label for="ylabel">y-label:</label>
-			    <input type="text" id="ylabel" size=9/></div>
-			<table border=1>
-			  <tr>
-			    <td align ="right"><label for="y1">y1</label></td>
-			    <td><input type="text" id="y1" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y2">y2</label></td>
-			    <td><input type="text" id="y2" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y3">y3</label></td>
-			    <td><input type="text" id="y3" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y4">y4</label></td>
-			    <td><input type="text" id="y4" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y5">y5</label></td>
-			    <td><input type="text" id="y5" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y6">y6</label></td>
-			    <td><input type="text" id="y6" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y7">y7</label></td>
-			    <td><input type="text" id="y7" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y8">y8</label></td>
-			    <td><input type="text" id="y8" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y9">y9</label></td>
-			    <td><input type="text" id="y9" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y10">y10</label></td>
-			    <td><input type="text" id="y10" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y11">y11</label></td>
-			    <td><input type="text" id="y11" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y12">y12</label></td>
-			    <td><input type="text" id="y12" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y13">y13</label></td>
-			    <td><input type="text" id="y13" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y14">y14</label></td>
-			    <td><input type="text" id="y14" size=6/></td>
-			  </tr>
-			  <tr>
-			    <td align ="right"><label for="y15">y15</label></td>
-			    <td><input type="text" id="y15" size=6/></td>
-			  </tr>
-			</table>
-		</div>
-		<br>
-		<div><button id="submit-button" type="submit" py-click="update_graph">Plot data</button></div>
+<div class="grid-container">
+  <div class="data-table">
+		<h2 style="font-size: 16px"><center>Data Table</center></h2>
+  		<table style="width:100%">
+			<tr>
+				<td style="width:40%" align ="center">x-Values</td>
+				<td style="width:40%" align ="center">y-Values</td>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x1" placeholder="x1" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y1" placeholder="y1" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x2" placeholder="x2" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y2" placeholder="y2" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x3" placeholder="x3" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y3" placeholder="y3" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x4" placeholder="x4" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y4" placeholder="y4" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x5" placeholder="x5" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y5" placeholder="y5" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x6" placeholder="x6" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y6" placeholder="y6" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x7" placeholder="x7" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y7" placeholder="y7" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x8" placeholder="x8" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y8" placeholder="y8" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x9" placeholder="x9" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y9" placeholder="y9" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x10" placeholder="x10" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y10" placeholder="y10" size=6/>
+			</tr>			
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x11" placeholder="x11" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y11" placeholder="y11" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x12" placeholder="x12" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y12" placeholder="y12" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x13" placeholder="x13" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y13" placeholder="y13" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x14" placeholder="x14" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y14" placeholder="y14" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x15" placeholder="x15" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y15" placeholder="y15" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x16" placeholder="x16" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y16" placeholder="y16" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x17" placeholder="x17" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y17" placeholder="y17" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x18" placeholder="x18" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y18" placeholder="y18" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x19" placeholder="x19" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y19" placeholder="y19" size=6/>
+			</tr>
+			<tr>
+				<td style="width:40%" align ="left"><input type="text" id="x20" placeholder="x20" size=6/>
+				<td style="width:40%" align ="left"><input type="text" id="y20" placeholder="y20" size=6/>
+			</tr>
+
+		</table>
+		<div><button id="update-button" type="submit" py-click="update_graph">Plot data</button></div>
+  </div>
+	
+  <div class="models-list">
+  		<div>
+			<h2 style="font-size: 16px"><center>Models to Fit Data</center></h2>
 	</div>
-		
-	<div class="models-list">
-		<div>
-			<center><strong>Models to Fit Data</strong></center>
-		</div>
-		
-		<!-- Linear model -->
-		<div class="model-element">
-			<table border=1>
-			  <tr>
-			    <td  colspan="2">Linear: y = mx + b</td>
-			  </tr>
-			  <tr> 
-			    <td><label for="lin_c1">m</label></td>
-			    <td><input type="lin_c1" id="lin_c1" size=10/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="lin_c0">b</label></td>
-			    <td><input type="lin_c0" id="lin_c0" size=10/></td>
-			  </tr>
-			</table>
-			<button id="submit-button" type="submit" py-click="linear_model">Try fit</button>
-			<div><br></div>
-		</div>
 
-		<!-- Quadratic model -->
-		<div class="model-element">
-			<table border=1>
-			  <tr>
-			    <td  colspan="2">Quadratic: y = A*x<sup>2</sup> + B*x + C</td>
-			  </tr>
-			  <tr>
-			    <td><label for="q2">A</label></td>
-			    <td><input type="q2" id="q2" size=10/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="q1">B</label></td>
-			    <td><input type="q1" id="q1" size=10/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="q0">C</label></td>
-			    <td><input type="q0" id="q0" size=10/></td>
-			  </tr>
-			</table>
-			<button id="submit-button" type="submit" py-click="quadratic_model">Try fit</button>
-			<div><br></div>
-		</div>
+	  <!-- Linear model -->
+		<table style="width:100%">
+			<tr>
+				<td  colspan="2">1. Linear: y = mx + b</td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="lin_c1">m</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="lin_c1" placeholder="0" size=10/></td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="lin_c0">b</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="lin_c0" placeholder="0" size=10/></td>
+			</tr>
+		</table>
+	  	<button id="linear-button" type="submit" py-click="linear_model">Try fit</button>
+        <div><br></div>
 
-		<!-- Inverse model -->
-		<div class="model-element">
-			<table border=1>
-			  <tr>
-			    <td  colspan="2">Inverse: y = c/x</td>
-			  </tr>
-			  <tr>
-			    <td><label for="ic">c</label></td>
-			    <td><input type="ic" id="ic" size=10/></td>
-			  </tr>
-			</table>
-			<button id="submit-button" type="submit" py-click="inverse_model">Try fit</button>
-			<div><br></div>
-		</div>
+	  <!-- Quadratic model -->
+        <table style="width:100%">
+			<tr>
+				<td  colspan="2">2. Quadratic: y = A*x<sup>2</sup> + B*x + C</td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="q2">A</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="q2" placeholder="0" size=10/></td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="q1">B</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="q1" placeholder="0" size=10/></td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="q0">C</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="q0" placeholder="0" size=10/></td>
+			</tr>
+		</table>
+	  	  	<button id="submit-button" type="submit" py-click="quadratic_model">Try fit</button>
+        <div><br></div>
 
-		<!-- Square root model -->
-		<div class="model-element">
-			<table border=1>
-			  <tr>
-			    <td  colspan="2">Square root: y = c*sqrt(x) + b</td>
-			  </tr>
-			   <tr> 
-			    <td><label for="sqrt_c1">c</label></td>
-			    <td><input type="sqrt_c1" id="sqrt_c1" size=10/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="sqrt_c0">b</label></td>
-			    <td><input type="sqrt_c0" id="sqrt_c0" size=10/></td>
-			  </tr>
-			</table>
-			<button id="submit-button" type="submit" py-click="sqrt_model">Try fit</button>
-			<div><br></div>
-		</div>
+	  <!-- Inverse model -->
+	   <table style="width:100%">
+          <tr>
+				<td  colspan="2">3. Inverse: y = c/x</td>
+		  </tr>
+		  <tr>
+			    <td style="width:20%" align ="right"><label for="ic">c</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="ic" placeholder="0" size=10/></td>
+		  </tr>
+		</table>
+	  	<button id="submit-button" type="submit" py-click="inverse_model">Try fit</button>
+        <div><br></div>	
 
-		<!-- Power model -->
-		<div class="model-element">
-			<table border=1>
-			  <tr>
-			    <td  colspan="2">Power: y = c*x<sup>n</sup> + b</td>
-			  </tr>
-			   <tr> 
-			    <td><label for="powerc">c</label></td>
-			    <td><input type="powerc" id="powerc" size=10/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="powern">n</label></td>
-			    <td><input type="powern" id="powern" size=10/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="powerb">b</label></td>
-			    <td><input type="powerb" id="powerb" size=10/></td>
-			  </tr>
-			</table>
-			<button id="submit-button" type="submit" py-click="power_model">Try fit</button>
-			<div><br></div>
-		</div>
+	  <!-- Square root model -->
+	  	<table style="width:100%">
+			<tr>
+				<td  colspan="2">4. Square root: y = c*sqrt(x) + b</td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="sqrt_c1">c</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="sqrt_c1" placeholder="0" size=10/></td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="sqrt_c0">b</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="sqrt_c0" placeholder="0" size=10/></td>
+			</tr>
+		</table>
+	  	<button id="submit-button" type="submit" py-click="sqrt_model">Try fit</button>
+        <div><br></div>
+	  
+ 	<!-- Power model -->
+	  	<table style="width:100%">
+			<tr>
+				<td  colspan="2">5. Power: y = c*x<sup>n</sup> + b</td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="powerc">c</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="powerc" placeholder="0" size=10/></td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="powern">n</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="powern" placeholder="0" size=10/></td>
+			</tr>
+			<tr>
+				<td style="width:20%" align ="right"><label for="powerb">b</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="powerb" placeholder="0" size=10/></td>
+			</tr>
+		</table>
+	  	<button id="submit-button" type="submit" py-click="power_model">Try fit</button>
+        <div><br></div>
 	</div>
 	
 	<div class="graph-block"> 
-		<div class="graph-display" id="graph"></div>
-		<div class="blank-row"><p></p></div>
-		<div class="graph-settings"> 
-			<table border=2>
-			  <tr>
-			    <td  colspan="2">Graph Settings</td>
-			  </tr>
-			  <tr>
-			    <td><label for="xmin">xmin</label></td>
-			    <td><input type="xmin" id="xmin" size=8/></td>
-			  </tr>
-			  <tr> 
-			    <td><label for="xmax">xmax</label></td>
-			    <td><input type="xmax" id="xmax" size=8/></td>
-			  </tr>
-			  <tr>
-			    <td><label for="ymin">ymin</label></td>
-			    <td><input type="ymin" id="ymin" size=8/></td>
-			  </tr>
-			  <tr> 
-			    <td><label for="ymax">ymax</label></td>
-			    <td><input type="ymax" id="ymax" size=8/></td>
-			  </tr>
-			</table>
-			<button id="submit-button" type="submit" py-click="update_graph">Update graph settings</button>
-		</div>
+		<div id="graph" align ="center"></div>
 	</div>
-</div>	
+	
+	<div class="graph-settings">
+		<h2 style="font-size: 16px"><center>Graph Settings</center></h2>
+		<div class="col-25">
+			<label for="xlabel"> x-variable:</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="xlabel" name="xlabel" placeholder="x" size="16" size=6/>
+		</div>
+		
+		<div class="col-25">
+			<label for="ylabel"> y-variable:</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="ylabel" name="ylabel" placeholder="y" size="16" size=6/>
+		</div>
+		
+		<table style="width:100%" padding: 20px;>
+			<tr>
+				<td style="width:10%" align ="right"><label for="xmin">xmin:</label></td>
+				<td style="width:40%" align ="left"><input type="text" id="xmin" placeholder="0" size=6/>
+				<td style="width:10%" align ="right"><label for="y1">xmax:</label></td>
+				<td style="width:40%" align ="left"><input type="text" id="xmax" placeholder="10" size=6/>
+			</tr>
+			<tr>
+				<td style="width:10%" align ="right"><label for="ymin">ymin:</label></td>
+				<td style="width:40%" align ="left"><input type="text" id="ymin" placeholder="0" size=6/>
+				<td style="width:10%" align ="right"><label for="ymax">ymax:</label></td>
+				<td style="width:40%" align ="left"><input type="text" id="ymax" placeholder="10" size=6/>
+			</tr>
+		</table>
+		
+		<div class="col-75">
+			<label for="graphscale">Graph size multiplier (1.0 - 1.5):</label>
+		</div>
+		<div class="col-25">
+			<input type="text" id="graphscale" size="5" size=6/>
+		</div>	
+	
+		<button id="submit-button" type="submit" py-click="update_graph">Update graph settings</button>
+		
+		<p><br style = “line-height:20px;”></p>
+		
+		<h2 style="font-size: 16px"><center>More Models to Fit Data</center></h2>
+
+		<!-- Inverse Square Model -->
+	   <table style="width:100%">
+          <tr>
+				<td  colspan="2">6. Inverse Square: y = c/x<sup>2</sup></td>
+		  </tr>
+		  <tr>
+			    <td style="width:20%" align ="right"><label for="invsqc">c</label></td>
+				<td style="width:80%" align ="left"><input type="text" id="invsqc" placeholder="0" size=10/></td>
+		  </tr>
+		</table>
+	  	<button id="submit-button" type="submit" py-click="inversesquare_model">Try fit</button>
+        <div><br></div>	
+	</div>
+</div>
+	
 <section class="pyscript">
 	<script type="py" src="./main.py" config="./pyscript.toml"></script>
 </section>	
