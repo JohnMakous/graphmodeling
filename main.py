@@ -1205,7 +1205,7 @@ def exponential_model(event):
 	ax1.grid(linewidth=0.4, zorder=1)
 
 	# place a text box in upper middle in axes coords
-	textstr1 = "Math Model: " +r'$y = %.3f x^{2} + %.3f x + %.3f$' % (c2float, c1float, c0float)
+	textstr1 = "Math Model: " +r'$y = %.3f e^{%.3f x} + %.3f$' % (c1float, c2float, c0float)
 	plt.title(textstr1, fontsize=7)
 	fig1.suptitle(y_label + " vs. "+ x_label, fontsize=8)
 	# props = dict(boxstyle='square', facecolor='wheat', alpha=0.5)
