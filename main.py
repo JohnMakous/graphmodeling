@@ -1190,7 +1190,7 @@ def exponential_model(event):
 	c2float=float(c2)
 		
 	x_model = np.arange(0.0,x_max,.001)
-	y_model = c1float*exp(c2float*x_model) + c0float
+	y_model = c1float*np.exp(c2float*x_model) + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
 	ax1.scatter(xfloat,yfloat, 15, color = 'black', zorder=2)
