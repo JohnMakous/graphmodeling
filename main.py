@@ -275,7 +275,7 @@ def linear_model(event):
 	c1float=float(c1)
 
 	#Create model array for plotting
-	x_model = np.arange(0.0,x_max,(x_max-xmin)/10000)
+	x_model = np.arange(0.0,x_max,(x_max-x_min)/10000)
 	y_model = c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
