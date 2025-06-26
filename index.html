@@ -87,7 +87,13 @@
 		}
 </style>
 
-<body>
+<body onload="myFunction()">
+
+<script>
+function myFunction() {
+  update_graph;
+}
+</script>
 
 <h3 style="font-size: 20px"><center>Graphmodeling</center></h3>
 <p>Fill in data in the table. Plot data. Choose a model; adjust the coefficients to find a good fit.</p>
@@ -367,9 +373,6 @@
 	
 <section class="pyscript">
 	<script type="py" src="./main.py" config="./pyscript.toml"></script>
-	<script type="py">
-		update_graph(onload)
-	</script>
 </section>	
 	    
     </body>
