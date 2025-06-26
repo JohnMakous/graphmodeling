@@ -89,9 +89,12 @@
 
 <body>
 
-<script type="py" src="./main.py" config="./pyscript.toml"></script>
-    window.onload = update_graph
-</script>
+<script type="py" src="./main.py" config="./pyscript.toml">
+        window.onload = function() {
+            <!--Call the PyScript function -->
+            pyscript.interpreter.globals.get('update_graph')()
+        };
+    </script>
 	
 <h3 style="font-size: 20px"><center>Graphmodeling</center></h3>
 <p>Fill in data in the table. Plot data. Choose a model; adjust the coefficients to find a good fit.</p>
