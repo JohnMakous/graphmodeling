@@ -275,7 +275,7 @@ def linear_model(event):
 	c1float=float(c1)
 
 	# Create model array for plotting
-	x_model = np.arange(x_min,x_max,(x_max-x_min)/10000)
+	x_model = np.arange(0,x_max,(x_max-x_min)/10000)
 	y_model = c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
@@ -432,7 +432,7 @@ def quadratic_model(event):
 	c2float=float(c2)
 		
 	# Create model array for plotting
-	x_model = np.arange(x_min,x_max,(x_max-x_min)/10000)
+	x_model = np.arange(0,x_max,(x_max-x_min)/10000)
 	y_model = c2float*x_model*x_model + c1float*x_model + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
@@ -579,7 +579,7 @@ def inverse_model(event):
 	c0float=float(c0)
 		
 	# Create model array for plotting
-	x_model = np.arange(x_min,x_max,(x_max-x_min)/10000)
+	x_model = np.arange(0,x_max,(x_max-x_min)/10000)
 	y_model = c0float/x_model
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
@@ -733,7 +733,7 @@ def sqrt_model(event):
 	c1float=float(c1)
 		
 	# Create model array for plotting
-	x_model = np.arange(x_min,x_max,(x_max-x_min)/10000)
+	x_model = np.arange(0,x_max,(x_max-x_min)/10000)
 	y_model = c1float*np.sqrt(x_model) + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
@@ -891,7 +891,7 @@ def power_model(event):
 	power_b_float = float(power_b)
 	
 	# Create model array for plotting
-	x_model = np.arange(x_min,x_max,(x_max-x_min)/10000)
+	x_model = np.arange(0,x_max,(x_max-x_min)/10000)
 	y_model = c0float*x_model**power_n_float + power_b_float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
@@ -1038,7 +1038,7 @@ def inversesquare_model(event):
 	c0float=float(c0)
 		
 	# Create model array for plotting
-	x_model = np.arange(x_min,x_max,(x_max-x_min)/10000)
+	x_model = np.arange(0,x_max,(x_max-x_min)/10000)
 	y_model = c0float/(x_model*x_model)
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
@@ -1196,7 +1196,7 @@ def exponential_model(event):
 	c2float=float(c2)
 		
 	# Create model array for plotting
-	x_model = np.arange(x_min,x_max,(x_max-x_min)/10000)
+	x_model = np.arange(0,x_max,(x_max-x_min)/10000)
 	y_model = c1float*np.exp(c2float*x_model) + c0float
 
 	fig1, ax1 = plt.subplots(1, dpi=150, figsize=(graph_scale*3.8,3.8))
